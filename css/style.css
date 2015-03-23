@@ -1,0 +1,108 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22/03/2015, 09:01:58 PM
+    Author     : MiPc
+*/
+#header{
+    width: 960px;
+    height: 155px;
+    background-color: #4F5B65;//#A5CD4E; //#638cb5;
+    margin: 0 auto 0;
+    padding-top: 9px;
+}
+
+h1{
+    font-family:“Lucida Grande”, Verdana, Helvetica, Arial, sans-serif;
+    color: white;
+    margin-top: 50px;
+    font-size: 36px;
+ }
+ 
+ h3{
+     font-family: Hervetica;
+     color: darkgray;
+     font-size: 12px;
+          
+ }
+ 
+ #logo{
+     float: right;
+     margin-right: -10px;
+     margin-top: -130px;
+ }
+ 
+ #nav{
+    background-color: #99cc33;
+    width: 960px;
+    height: 35px;
+    margin: 0 auto 0;
+    padding: 1px;
+    
+}
+
+#nav ul{
+    width: 930px;
+    float: right;
+    list-style: none;
+    margin: 0;
+    }
+    
+    #nav li{
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+    
+    #nav a{
+        display: block;
+        font-family: Hervetica;
+        font-size:14px;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        height: 25px;
+        padding: 7px 10px 0px 10px;
+        text-align: center;
+    }
+
+    #section{
+        width: 960px;
+        height: 500px;
+        background-color: #F0F0F0;
+        margin: 0 auto 0;
+    }
+    
+    #footer{
+        width: 960px;
+        height: 90px;
+        margin: 0 auto 0;
+    }
+
+    table{
+    margin: 0 auto 0;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;    
+    text-align: left;    
+    border-collapse: collapse;
+   //background-color: blue;
+}
+
+th { 
+    background: #D3D3D3; 
+    font-weight: bold; 
+}
+.boton{
+    font-size:10px;
+        font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+        font-weight:bold;
+        color:white;
+        background:#638cb5;
+        border:0px;
+        width:80px;
+        height:19px;
+}
