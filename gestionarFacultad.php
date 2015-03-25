@@ -13,65 +13,14 @@ and open the template in the editor.
     </head>
     <?php include ("Header.php"); ?>
     <body>
-        <br>
-        <form action="">
-            <table border="1">
-                <thead>
-                    <tr align ="center">
-                        
-                        <th colspan="2">Datos Facultad</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Identificación:</td>
-                        <td><input type="text" name="txt_identificacion" value="" required=""/></td>
-                    </tr>
-                    <tr>
-                        <td>Nombres:</td>
-                        <td><input type="text" name="txt_nombres" value="" required=""/></td>
-                    </tr>
-                    <tr>
-                        <td>Apellidos:</td>
-                        <td><input type="text" name="txt_apellidos" value="" required=""/></td>
-                    </tr>
-                    <tr>
-                        <td>Fecha de nacimiento:</td>
-                        <td><input type="date" name="txt_nacimiento" value="" required=""/></td>
-                    </tr>
-                    <tr>
-                        <td>Lugar de nacimiento</td>
-                        <td><input type="text" name="txt_lugarnacimiento" value="" required=""/></td>
-                    </tr>
-                    <tr>
-                        <td>Género:</td>
-                        <td>Masculino<input type="radio" name="genero" value="Masculino"/>Femenino<input type="radio" name="genero" value="Femenino"></td>
-                    </tr>
-                    <tr>
-                        <td>Colegio:</td>
-                        <td><input type="text" name="txt_colegio" value="" required=""/></td>
-                    </tr>
-                    <tr>
-                        <td>Promedio:</td>
-                        <td><input type="text" name="txt_promedio" value="" required=""td>
-                    </tr>
-                    <tr>
-                        <td>Foto:</td>
-                        <td><input type="file" name="foto" value="" /></td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-            
-            <table>
-                <tr>
-                    <td>
-            <input type="submit" value="Enviar" class="boton"/>
-            </td>
-            </tr>
-            </table>
-
-        </form>
+        <div id="section">
+            <div id="info"> 
+            <a href="agregarFacultad.php"><img src="img/facultad/agregarFacultad.png" width="100" height="80">Agregar facultad</a>
+            <a href="buscarFacultad.php"><img src="img/facultad/buscarFacultad.png" width="100" height="80">Buscar Facultad</a> 
+            <a href="modificarFacultad.php"><img src="img/facultad/modificarFacultad.png" width="100" height="80">Modificar Facultad</a> 
+            <a href="eliminarFacultad.php"><img src="img/facultad/eliminarFacultad.png" width="100" height="80">Eliminar Facultad</a> 
+               </div> 
+        </div>
     </body>
     <?php
 include("fooder.php"); 

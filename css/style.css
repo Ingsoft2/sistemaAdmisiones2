@@ -72,15 +72,21 @@ h1{
 
     #section{
         width: 960px;
-        height: 500px;
-        background-color: #F0F0F0;
-        margin: 0 auto 0;
+        height: auto;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
     }
     
     #footer{
         width: 960px;
         height: 90px;
-        margin: 0 auto 0;
+        margin: 0 auto;
+        font-size: 12px;
+        text-align: center;
+        color: #7b7878;
+     border: 1px solid #ccc;
+    margin-top: 10px;
     }
 
     table{
@@ -89,6 +95,7 @@ h1{
     font-size: 12px;    
     text-align: left;    
     border-collapse: collapse;
+    
    //background-color: blue;
 }
 
@@ -105,4 +112,14 @@ th {
         border:0px;
         width:80px;
         height:19px;
+}
+#info{
+    text-align: center;
+    padding-top: 50px;
+    display: block;
+        font-family: Hervetica;
+        font-size:14px;
+        color: blue;
+        text-decoration: none;
+        position: relative;    
 }

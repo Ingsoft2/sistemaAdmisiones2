@@ -15,14 +15,15 @@ and open the template in the editor.
         
             <?php include ("Header.php"); ?>
         
-        
-        
-        <section>
-   
-        </section>
-        <?php
-include("fooder.php"); 
-?>
+        <div id="section">
+            
+            
+            <div id="info">
+                Bienvenidos al sitema de admisiones de la universidad de Gorgona
+            </div>
+        </div>
+              
+        <?php include("fooder.php"); ?>
         
     </body>
 </html>
