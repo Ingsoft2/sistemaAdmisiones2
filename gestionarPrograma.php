@@ -2,6 +2,10 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <?php
+include("Header.php"); 
+?>
+        <link type="text/css" rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <br>
@@ -24,33 +28,13 @@
                     </tr>
                     <tr>
                         <td>Estado del programa:</td>
-                        <td><input type="text" name="txt_apellidos" value="" required=""/></td>
+                        <td>Acreditacion Alta<input type="radio" name="estado" value="alta" required/>Acreditacion Media<input type="radio" name="estado" value="media" required/>Acreditacion Baja<input type="radio" name="estado" value="baja" required/>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Fecha de nacimiento:</td>
-                        <td><input type="date" name="txt_nacimiento" value="" required=""/></td>
-                    </tr>
-                    <tr>
-                        <td>Lugar de nacimiento</td>
-                        <td><input type="text" name="txt_lugarnacimiento" value="" required=""/></td>
-                    </tr>
-                    <tr>
-                        <td>Género:</td>
-                        <td>Masculino<input type="radio" name="genero" value="Masculino"/>Femenino<input type="radio" name="genero" value="Femenino"></td>
-                    </tr>
-                    <tr>
-                        <td>Colegio:</td>
-                        <td><input type="text" name="txt_colegio" value="" required=""/></td>
-                    </tr>
-                    <tr>
-                        <td>Promedio:</td>
-                        <td><input type="text" name="txt_promedio" value="" required=""td>
-                    </tr>
-                    <tr>
-                        <td>Foto:</td>
-                        <td><input type="file" name="foto" value="" /></td>
-                    </tr>
-                    
+                        <td>Numero de admitidos:</td>
+                        <td><input type="text" name="txt_num_admitidos" value="" required=""td>
+                    </tr>                                                   
                 </tbody>
             </table>
             
@@ -64,4 +48,7 @@
 
         </form>
     </body>
+    <?php
+include("fooder.php"); 
+?>
 </html>
