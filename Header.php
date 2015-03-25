@@ -13,7 +13,7 @@
                 <div id="nav">
                     <ul>
                         <li><a href="#">Gestionar facultad</a></li>
-                           <li> <a href="#">Gestionar programa</a></li>
+                        <li> <a href="gestionarPrograma.php">Gestionar programa</a></li>
                            <li> <a href="#">Gestionar colegio</a></li>
                            <li> <a href="#">Gestionar aspirante</a></li>
                            <li> <a href="#">Consultar admitidos</a></li>

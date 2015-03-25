@@ -28,8 +28,12 @@ include("Header.php");
                     </tr>
                     <tr>
                         <td>Estado del programa:</td>
-                        <td>Acreditacion Alta<input type="radio" name="estado" value="alta" required/>Acreditacion Media<input type="radio" name="estado" value="media" required/>Acreditacion Baja<input type="radio" name="estado" value="baja" required/>
-                        </td>
+                        <td><select>
+                    <option>Acreditacion Alta</option>
+                    <option>Acreditacion Media</option>
+                    <option>Acreditacion Baja</option>
+                </select></td>
+                        
                     </tr>
                     <tr>
                         <td>Numero de admitidos:</td>
@@ -37,7 +41,7 @@ include("Header.php");
                     </tr>                                                   
                 </tbody>
             </table>
-            
+            <br>
             <table>
                 <tr>
                     <td>
