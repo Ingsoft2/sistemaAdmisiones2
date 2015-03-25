@@ -8,7 +8,7 @@ and open the template in the editor.
     <head>
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <meta charset="UTF-8">
-        <title>Gestionar Facultad</title>
+        <title>Gestionar Aspirante</title>
         
     </head>
     <?php include ("Header.php"); ?>
@@ -19,7 +19,7 @@ and open the template in the editor.
                 <thead>
                     <tr align ="center">
                         
-                        <th colspan="2">Datos Facultad</th>
+                        <th colspan="2">Datos aspirante</th>
                     </tr>
                 </thead>
                 <tbody>

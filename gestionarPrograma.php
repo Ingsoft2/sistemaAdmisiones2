@@ -1,12 +1,14 @@
 <html>
     <head>
+        <link type="text/css" rel="stylesheet" href="css/style.css">
         <meta charset="UTF-8">
-        <title></title>
+        <title>Gestionar Programa</title>
         <?php
 include("Header.php"); 
 ?>
         <link type="text/css" rel="stylesheet" href="css/style.css">
     </head>
+    <?php include ("Header.php"); ?>
     <body>
         <br>
         <form action="">

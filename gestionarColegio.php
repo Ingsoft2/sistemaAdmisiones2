@@ -6,9 +6,11 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <link type="text/css" rel="stylesheet" href="css/style.css">
         <meta charset="UTF-8">
-        <title></title>
+        <title>Gestionar Colegio</title>
     </head>
+    <?php include ("Header.php"); ?>
     <body>
         <br>
         <form action="">
@@ -16,7 +18,7 @@ and open the template in the editor.
                 <thead>
                     <tr align ="center">
                         
-                        <th colspan="2">Datos aspirante</th>
+                        <th colspan="2">Datos Colegio</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,4 +58,7 @@ and open the template in the editor.
 
         </form>
     </body>
+    <?php
+include("fooder.php"); 
+?>
 </html>
