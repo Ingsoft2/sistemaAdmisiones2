@@ -15,7 +15,7 @@
                         <li><a href="gestionarFacultad.php">Gestionar facultad</a></li>
                         <li> <a href="gestionarPrograma.php">Gestionar programa</a></li>
                         <li> <a href="gestionarColegio.php">Gestionar colegio</a></li>
-                           <li> <a href="g">Gestionar aspirante</a></li>
+                        <li> <a href="gestionAraspirante.php">Gestionar aspirante</a></li>
                            <li> <a href="#">Consultar admitidos</a></li>
                            <li> <a href="#">Registrar resultados</a></li>
                            <li> <a href="#">Ingresar aspirante</a></li>
