@@ -14,6 +14,7 @@ and open the template in the editor.
     <body>
         
             <?php include ("Header.php"); ?>
+            <?php include './conexion.php'; ?>
         
         <div id="section">
             
