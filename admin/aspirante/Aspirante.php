@@ -61,19 +61,20 @@ class Aspirante {
     }
 
     public function lista_aspirante($tabla) {
-
+        
         include '../conexion.php';
         $result = mysql_query("SELECT * FROM aspirante");
         echo "<table border = '3'> \n";
         echo "<tr><td>IDENTIFICACION</td><td>NOMBRES</td><td>APELLIDOS</td><td>FECHA NACIMIENTO</td><td>LUGAR NACIMIENTO</td><td>GENERO</td><td>ID COLEGIO</td><td>PROMEDIO</td><td>OPCIONES</td></tr> \n";
         while ($row = mysql_fetch_row($result)) {
-            echo "<tr><td>$row[0]</td><td>$row[1]</td><td>$row[2]</td><td>$row[3]</td><td>$row[4]</td><td>$row[5]</td><td>$row[6]</td><td>$row[7]</td> <td><a href=procesar_aspirante.php?req_asp=eliminar&id=".$row[0].">Borrar</a><a href=modificarAspirante.php?req_asp=modificar&id=".$row[0]."&nombre=".$row[1].""
+            echo "<tr><td>$row[0]</td><td>$row[1]</td><td>$row[2]</td><td>$row[3]</td><td>$row[4]</td><td>$row[5]</td><td>$row[6]</td><td>$row[7]</td> <td><a href=../aspirante/procesar_aspirante.php?req_asp=eliminar&id=".$row[0].">Borrar</a><a href=../aspirante/modificarAspirante.php?req_asp=modificar&id=".$row[0]."&nombre=".$row[1].""
                     . "&apellido=".$row[2]."&fecha_nacimiento=".$row[3]."&lugar_nacimiento=".$row[4]."&colegio=".$row[6]."&promedio=".$row[7]."> Modificar</a></td></tr> \n";
            // echo "<td><a href=editar_estudiante.php?id=".$row[$campos[0]].">Editar</a></td>";
             
         }
         echo "</table> \n";
     }
+    
     
     
     static function eliminar_aspirante($id)
