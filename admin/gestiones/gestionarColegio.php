@@ -21,8 +21,9 @@ and open the template in the editor.
             <br> 
             <br> 
          <?php include '../conexion.php';
-                include '../aspirante/Aspirante.php';
-                  Aspirante::lista_aspirante('aspirante');
+                include '../colegio/Colegio.php';
+                Colegio::lista_colegios('colegio');
+                  
                 ?>
                </div> 
         </div>

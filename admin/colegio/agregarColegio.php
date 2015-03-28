@@ -23,7 +23,12 @@
                     </tr>
                     <tr>
                         <td>Estado:</td>
-                        <td>Publico<input type="radio" name="estado" value="Publico"/>Privado<input type="radio" name="estado" value="Privado"></td>
+                        <td>
+                <select name="estado"> 
+                    <option> Privado</option>
+                    <option selected> Publico</option>
+                </select>
+                        </td>
                     </tr>
                     <tr>
                         <td>Ciudad:</td>
