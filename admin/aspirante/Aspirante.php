@@ -112,7 +112,8 @@ class Aspirante {
               . "fecha_nacimiento='".$pFecha_nacimiento."', "
               . "lugar_nacimiento='".$pLugar_nacimiento."', "
               . "genero='".$pGenero."', "
-              . "id_colegio='".$pColegio."', promedio='".$pPromedio."', "
+              . "id_colegio='".$pColegio."', "
+              . "promedio='".$pPromedio."', "
               . "lugar_nacimiento='".$pLugar_nacimiento."' WHERE identificacion=".$pIdentificacion_actual;
         
         mysql_query($sql);
