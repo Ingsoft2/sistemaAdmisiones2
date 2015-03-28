@@ -96,9 +96,10 @@ switch ($_REQUEST['req_asp']) {
             Aspirante::editarAspirante($identificacion_actual, $identificacion_actual, $nombres, $apellidos, $fecha_nacimiento, $lugar_nacimiento, $genero, $colegio, $promedio);
         }
             else{
-        echo '<script> alert("El numero de identificacion ('.$identificacion_nueva.') ya se encuentra en uso"); location.href="modificarAspirante.php?id='.$identificacion_actual.'&nombre='.$nombres.'&apellido='.$apellidos.'&fecha_nacimiento='.$fecha_nacimiento.'&lugar_nacimiento='.$lugar_nacimiento.'&colegio='.$colegio.'&promedio='.$promedio.'";</script>';
+        echo '<script> alert("El numero de identificacion ('.$identificacion_nueva.') ya se encuentra en uso"); location.href="../aspirante/modificarAspirante.php?id='.$identificacion_actual.'&nombre='.$nombres.'&apellido='.$apellidos.'&fecha_nacimiento='.$fecha_nacimiento.'&lugar_nacimiento='.$lugar_nacimiento.'&colegio='.$colegio.'&promedio='.$promedio.'";</script>';
         }}
         else{
+    include '';
               if($identificacion_actual != $identificacion_nueva && $identificacion_nueva!=null){
             Aspirante::editarAspirante($identificacion_actual, $identificacion_nueva, $nombres, $apellidos, $fecha_nacimiento, $lugar_nacimiento, $genero, $colegio, $promedio);
         }else{
