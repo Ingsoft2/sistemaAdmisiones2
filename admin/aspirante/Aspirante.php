@@ -23,7 +23,8 @@ class Aspirante {
     var $promedio;
     var $foto;
 
-    function Aspirante($nombre, $apellido, $identificacion, $fecha_nacimiento, $lugar_nacimiento, $genero, $colegio, $promedio, $foto) {
+    function Aspirante($nombre, $apellido, $identificacion, $fecha_nacimiento, $lugar_nacimiento, $genero, $colegio, $promedio, $foto)
+    {
         $this->nombre = $nombre;
         $this->apellido = $apellido;
         $this->identificacion = $identificacion;

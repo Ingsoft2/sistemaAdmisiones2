@@ -54,18 +54,26 @@ class Colegio {
     }
     
     
-        static function eliminar_colegio($id)
+      function eliminar_colegio($id)
     {
         include '../conexion.php';
         $mensaje = "resultados:";
-        //Insertar usuario en la BD        
+        //Insertar usuario en la BD  
+        if(confirm("Desea borrar el registro?"))
+        {
         $sql = @mysql_query("delete from colegio where id_colegio=$id");
         if (!$sql) {
             $mensaje.="Error Eliminando aspirante en la base de datos: " . mysql_error();
         } else {
             $mensaje.="El aspirante con identificacion " . $id . " fue eliminado del sistema";
         }
+        
         return $mensaje;
+        }
+        else
+            return FALSE;
     }
 
+    
+    
 }
