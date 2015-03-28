@@ -123,3 +123,7 @@ th {
         text-decoration: none;
         position: relative;    
 }
+
+#imagen{
+    margin: 0 auto;
+}

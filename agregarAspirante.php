@@ -14,7 +14,8 @@ and open the template in the editor.
     <body>
         <div id="section">
         <br>
-        <form enctype="multipart/form-data" action="procesar_aspirante.php" method="post">
+        
+        <form method="POST" enctype="multipart/form-data" action="procesar_aspirante.php" >
             <table border="1">
                 <thead>
                     <tr align ="center">
@@ -57,7 +58,7 @@ and open the template in the editor.
                     </tr>
                     <tr>
                         <td>Foto:</td>
-                        <td><input type="file" name="foto" value="" /></td>
+                        <td><input type="file" name="foto" id="foto" /></td>
                     </tr>
                     
                 </tbody>

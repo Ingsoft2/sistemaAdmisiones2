@@ -15,10 +15,15 @@ and open the template in the editor.
     <body>
         <div id="section">
             <div id="info"> 
+                
                 <a href="agregarAspirante.php"><img src="img/aspirante/agregarAspirante.png" width="100" height="90">Agregar Aspirante</a>
             <a href="buscarAspirante.php"><img src="img/aspirante/buscarAspirante.png" width="100" height="90">Buscar Aspirante</a> 
-            <a href="modificarAspirante.php"><img src="img/aspirante/modificarAspirante.png" width="100" height="90">Modificar Aspirante</a> 
-            <a href="eliminarAspirante.php"><img src="img/aspirante/eliminarAspirante.png" width="100" height="90">Eliminar Aspirante</a> 
+            <br> 
+            <br> 
+         <?php include './conexion.php';
+                include './Aspirante.php';
+                  Aspirante::lista_aspirante('aspirante');
+                ?>
                </div> 
         </div>
     <?php

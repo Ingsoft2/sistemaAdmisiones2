@@ -20,8 +20,19 @@ and open the template in the editor.
             
             
             <div id="info">
-                Bienvenidos al sitema de admisiones de la universidad de Gorgona
+                Bienvenidos al sitema de admisiones de la universidad de la Gorgona
+ 
             </div>
+            <br>
+            <br>
+            <div align="center">
+                     <a>
+                         <img src="img/illustration.png" width="450" height="300">
+                         
+                    </a>
+                </div>
+            <br>
+            <br>
         </div>
               
         <?php include("fooder.php"); ?>
