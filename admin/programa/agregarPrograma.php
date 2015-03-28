@@ -8,6 +8,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <link type="text/css" rel="stylesheet" href="../../css/style.css">
+        
         <title></title>
     </head>
     <?php include ("Header.php"); ?>
@@ -20,59 +21,45 @@ and open the template in the editor.
                 <thead>
                     <tr align ="center">
                         
-                        <th colspan="2">Datos aspirante</th>
+                        <th colspan="2">Datos Programa</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Identificación:</td>
-                        <td><input type="text" name="txt_identificacion" value="" required=""/></td>
+                        <td>Nombre:</td>
+                        <td><input type="text" name="txt_nom" value="" required=""/></td>
                     </tr>
                     <tr>
-                        <td>Nombres:</td>
-                        <td><input type="text" name="txt_nombres" value="" required=""/></td>
+                        <td>Fecha de Registro</td>
+                        <td><input type="date" name="txt_fecha" value="" required=""/></td>
                     </tr>
                     <tr>
-                        <td>Apellidos:</td>
-                        <td><input type="text" name="txt_apellidos" value="" required=""/></td>
-                    </tr>
-                    <tr>
-                        <td>Fecha de nacimiento:</td>
-                        <td><input type="date" name="txt_nacimiento" value="" required=""/></td>
-                    </tr>
-                    <tr>
-                        <td>Lugar de nacimiento</td>
-                        <td><input type="text" name="txt_lugarnacimiento" value="" required=""/></td>
-                    </tr>
-                    <tr>
-                        <td>Género:</td>
-                        <td>Masculino<input type="radio" name="genero" value="Masculino"/>Femenino<input type="radio" name="genero" value="Femenino"></td>
-                    </tr>
-                    <tr>
-                        <td>Colegio:</td>
-                        <td><input type="text" name="txt_colegio" value="" required=""/></td>
-                    </tr>
-                    <tr>
-                        <td>Promedio:</td>
-                        <td><input type="text" name="txt_promedio" value="" required=""td>
-                    </tr>
-                    <tr>
-                        <td>Foto:</td>
-                        <td><input type="file" name="foto" id="foto" /></td>
-                    </tr>
-                    
+                        <td>Acreditacion</td>
+                        <td> <select name="acreditacion">
+                    <option>Alta</option>
+                    <option>Media</option>
+                    <option>Baja</option>
+                        </select></td>
+            </tr>
+             
+           
                 </tbody>
             </table>
             
             <table>
                 <tr>
+                    <br>
                     <td>
             <input type="submit" value="Enviar" class="boton"/>
-            <input type="hidden" value="Enviar" name="req_asp">
+            <input type="hidden" value="Enviar" name="req_prog">
+            </td>
+            <td>
+            <input type="submit" value="Regresar" class="boton"/>
+            <input type="hidden" value="Regresar" name="req_prog">
             </td>
             </tr>
             </table>
-
+<br>
         </form>
         </div>
     </body>
