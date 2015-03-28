@@ -8,7 +8,7 @@ switch ($_REQUEST['req_col']){
         $ciudad = $_POST['txt_ciudad'];
                 
         $mensaje = Colegio::insertarColegio($nombre, $estado, $ciudad);
-      include './index.php';  
+     header('Location:../gestiones/gestionarColegio.php'); 
       exit();
       break;
 }

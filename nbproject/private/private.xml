@@ -3,11 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/Aspirante.php</file>
-            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/modificarAspirante.php</file>
-            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/gestionAraspirante.php</file>
-            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/procesar_aspirante.php</file>
-            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/agregarAspirante.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/aspirante/Aspirante.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/colegio/procesar_colegio.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/colegio/agregarColegio.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/colegio/Colegio.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/gestiones/gestionAraspirante.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/aspirante/Header.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/aspirante/procesar_aspirante.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/gestiones/gestionarColegio.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/aspirante/modificarAspirante.php</file>
         </group>
     </open-files>
 </project-private>

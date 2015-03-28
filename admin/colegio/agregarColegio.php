@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <link type="text/css" rel="stylesheet" href="../../css/style.css">
         <meta charset="UTF-8">
         <title>Gestionar Colegio</title>
     </head>

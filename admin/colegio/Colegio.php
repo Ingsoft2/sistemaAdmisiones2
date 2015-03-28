@@ -23,7 +23,7 @@ class Colegio {
    }
    
     static function insertarColegio($pNombre, $pEstado, $pCiudad) {
-        include 'conexion.php';
+        include '../conexion.php';
         $mensaje = "resultados: ";
         //Insertar Colegio en la BD
         $sql = @mysql_query("INSERT INTO colegio(nombre, estado, ciudad) "
