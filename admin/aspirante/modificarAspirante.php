@@ -10,7 +10,7 @@ and open the template in the editor.
         <link type="text/css" rel="stylesheet" href="css/style.css">
         <title></title>
     </head>
-    <?php include ("Header.php"); ?>
+    <?php include ("../Header.php"); ?>
     <body>
         <div id="section">
         <br>
@@ -78,7 +78,7 @@ and open the template in the editor.
         </div>
     </body>
          <?php
-include("fooder.php"); 
+include("../fooder.php"); 
 ?>
     
 </html>

@@ -16,7 +16,7 @@ switch ($_REQUEST['req_asp']) {
         $colegio = $_POST['txt_colegio'];
         $promedio = $_POST['txt_promedio'];
 
-        require './conexion.php';
+        require '../conexion.php';
 
 //comprobamos si ha ocurrido un error.
         if (!isset($_FILES["foto"]) || $_FILES["foto"]["error"] > 0) {
@@ -53,16 +53,16 @@ switch ($_REQUEST['req_asp']) {
 
         // Aspirante::insertarImagen($data, $tipo);
         $mensaje = Aspirante::insertarAspirante($identificacion, $nombres, $apellidos, $fecha_nacimiento, $lugar_nacimiento, $genero, $colegio, $promedio, $data, $tipo);
-        header('Location:gestionarAspirante.php');
+        header('Location:../gestiones/gestionAraspirante.php');
         exit();
         break;
-
+        
     case "eliminar":
 
         $id = $_REQUEST['id'];
 
         $mensaje = Aspirante::eliminar_aspirante($id);
-        header('Location:gestionarAspirante.php');
+        header('Location:../gestiones/gestionAraspirante.php');
         exit();
         break;
 
@@ -87,7 +87,7 @@ switch ($_REQUEST['req_asp']) {
         }else{  $id_b=$identificacion_actual; }
 
  
-        require './conexion.php';
+        require '../conexion.php';
         $sql = @mysql_query("SELECT identificacion FROM aspirante WHERE identificacion=".$id_b);
         $campos = mysql_fetch_object($sql);
         if ($campos != null) {

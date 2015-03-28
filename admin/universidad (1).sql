@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 28-03-2015 a las 08:14:44
--- Versión del servidor: 5.6.20
--- Versión de PHP: 5.5.15
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 28-03-2015 a las 18:01:25
+-- Versión del servidor: 5.6.21
+-- Versión de PHP: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `colegio` (
   `nombre` varchar(100) NOT NULL,
   `ciudad` varchar(45) NOT NULL,
   `estado` varchar(10) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `colegio`
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `imagenes` (
 `id_imagen` int(11) NOT NULL,
   `imagen` blob NOT NULL,
   `tipo_imagen` varchar(45) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `imagenes`

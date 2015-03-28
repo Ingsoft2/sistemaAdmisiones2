@@ -36,7 +36,7 @@ class Aspirante {
     }
 
     static function insertarImagen($data, $tipo) {
-        include 'conexion.php';
+        include '../conexion.php';
         $resultado = mysql_query("INSERT INTO imagen (imagen, tipo_imagen) VALUES ('$data', '$tipo')");
         if ($resultado) {
             echo "el archivo ha sido copiado exitosamente";
@@ -46,7 +46,7 @@ class Aspirante {
     }
 
     static function insertarAspirante($pIdentificacion, $pNombre, $pApellido, $pFecha_nacimiento, $pLugar_nacimiento, $pGenero, $pColegio, $pPromedio, $pFoto, $pTipo_imagen) {
-        include 'conexion.php';
+        include '../conexion.php';
         $mensaje = "resultados: ";
 //Insertar aspirante en la BD
         echo $pTipo_imagen;
@@ -62,7 +62,7 @@ class Aspirante {
 
     public function lista_aspirante($tabla) {
 
-        include './conexion.php';
+        include '../conexion.php';
         $result = mysql_query("SELECT * FROM aspirante");
         echo "<table border = '3'> \n";
         echo "<tr><td>IDENTIFICACION</td><td>NOMBRES</td><td>APELLIDOS</td><td>FECHA NACIMIENTO</td><td>LUGAR NACIMIENTO</td><td>GENERO</td><td>ID COLEGIO</td><td>PROMEDIO</td><td>OPCIONES</td></tr> \n";
@@ -78,7 +78,7 @@ class Aspirante {
     
     static function eliminar_aspirante($id)
     {
-        include './conexion.php';
+        include '../conexion.php';
         $mensaje = "resultados:";
         //Insertar usuario en la BD        
         $sql = @mysql_query("DELETE FROM aspirante WHERE identificacion=$id");
@@ -92,7 +92,7 @@ class Aspirante {
     
      static function editarAspirante($pIdentificacion_actual, $pIdentificacion, $pNombre, $pApellido, $pFecha_nacimiento, $pLugar_nacimiento, $pGenero, $pColegio, $pPromedio)
     {
-       include './conexion.php';
+       include '../conexion.php';
        /*  $sql = @mysql_query("SELECT identificacion from aspirante WHERE identificacion=$pIdentificacion");
          $consulta = mysql_query($sql);
          while ($registros = mysql_fetch_array($consulta)){
@@ -114,7 +114,8 @@ class Aspirante {
               . "lugar_nacimiento='".$pLugar_nacimiento."' WHERE identificacion=".$pIdentificacion_actual;
         
         mysql_query($sql);
-        header('Location:gestionarAspirante.php');
+        
+        header('Location:../gestiones/gestionAraspirante.php');
        // $campos= mysql_fetch_object($sql);*/
 
     //  $campos= mysql_fetch_object($sql);

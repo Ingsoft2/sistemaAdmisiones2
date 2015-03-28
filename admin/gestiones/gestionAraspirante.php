@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <link type="text/css" rel="stylesheet" href="../../css/style.css">
         <meta charset="UTF-8">
         <title>Gestionar Aspirante</title>
         
@@ -16,16 +16,17 @@ and open the template in the editor.
         <div id="section">
             <div id="info"> 
                 
-                <a href="agregarAspirante.php"><img src="img/aspirante/agregarAspirante.png" width="100" height="90">Agregar Aspirante</a>
-            <a href="buscarAspirante.php"><img src="img/aspirante/buscarAspirante.png" width="100" height="90">Buscar Aspirante</a> 
+                <a href="../aspirante/agregarAspirante.php"><img src="../../img/aspirante/agregarAspirante.png" width="100" height="90">Agregar Aspirante</a>
+                <a href="../aspirante/buscarAspirante.php"><img src="../../img/aspirante/buscarAspirante.png" width="100" height="90">Buscar Aspirante</a> 
             <br> 
             <br> 
-         <?php include './conexion.php';
-                include './Aspirante.php';
+         <?php include '../conexion.php';
+                include '../aspirante/Aspirante.php';
                   Aspirante::lista_aspirante('aspirante');
                 ?>
                </div> 
         </div>
+    </body>
     <?php
 include("fooder.php"); 
 ?>
