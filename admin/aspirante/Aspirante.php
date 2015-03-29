@@ -106,7 +106,7 @@ class Aspirante {
         mysql_query($sql);*/
         
       
-      $sql = "UPDATE aspirante SET identificacion=".$pIdentificacion.", "
+      $sql = "UPDATE aspirante SET identificacion".$pIdentificacion.", "
               . "nombres='".$pNombre."', "
               . "apellidos='".$pApellido."', "
               . "fecha_nacimiento='".$pFecha_nacimiento."', "
