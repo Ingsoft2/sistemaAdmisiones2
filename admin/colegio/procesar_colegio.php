@@ -14,6 +14,7 @@ switch ($_REQUEST['req_col'])
       
       case "eliminar":
 
+         
         $id = $_REQUEST['id'];
 
         $mensaje = Colegio::eliminar_colegio($id);
