@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-03-2015 a las 21:34:49
+-- Tiempo de generación: 29-03-2015 a las 00:29:00
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `aspirante` (
 --
 
 INSERT INTO `aspirante` (`identificacion`, `nombres`, `apellidos`, `fecha_nacimiento`, `lugar_nacimiento`, `genero`, `id_colegio`, `promedio`, `foto`, `tipo_imagen`) VALUES
-(9307, 'byron', 'trejo', '2015-03-06', 'ipiales', 'Femenino', 10, '4.00', '', ''),
+(9307, 'byron', 'trejo', '2015-03-06', 'ipiales', 'Masculino', 10, '4.00', '', ''),
 (1085277182, 'juank', 'Guzman', '1989-11-11', 'Pasto', 'Masculino', 10, '5.00', '', ''),
 (1123307255, 'david', 'ccc', '2015-03-02', 'pu', 'Masculino', 10, '5.00', '', '');
 
@@ -57,16 +57,17 @@ INSERT INTO `aspirante` (`identificacion`, `nombres`, `apellidos`, `fecha_nacimi
 CREATE TABLE IF NOT EXISTS `colegio` (
 `id_colegio` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
-  `ciudad` varchar(45) NOT NULL,
-  `estado` varchar(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+  `estado` enum('Publico','Privado') NOT NULL,
+  `ciudad` varchar(45) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `colegio`
 --
 
-INSERT INTO `colegio` (`id_colegio`, `nombre`, `ciudad`, `estado`) VALUES
-(10, 'inedci', 'cali', 'Publico');
+INSERT INTO `colegio` (`id_colegio`, `nombre`, `estado`, `ciudad`) VALUES
+(10, 'inedci', 'Publico', 'cali'),
+(11, 'andes', 'Privado', 'Pasto');
 
 -- --------------------------------------------------------
 
@@ -176,7 +177,7 @@ ALTER TABLE `programa`
 -- AUTO_INCREMENT de la tabla `colegio`
 --
 ALTER TABLE `colegio`
-MODIFY `id_colegio` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `id_colegio` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `facultad`
 --
