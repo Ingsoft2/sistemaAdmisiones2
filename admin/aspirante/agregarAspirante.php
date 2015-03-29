@@ -11,6 +11,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <?php include ("Header.php"); ?>
+    <?php include ("../conexion.php"); ?>
     <body>
         <div id="section">
         <br>
@@ -50,7 +51,17 @@ and open the template in the editor.
                     </tr>
                     <tr>
                         <td>Colegio:</td>
-                        <td><input type="text" name="txt_colegio" value="" required=""/></td>
+                        <td> 
+                            <?php $result = mysql_query("SELECT * FROM colegio"); ?>
+                            <select name="txt_colegio"> <?php  while ($row = mysql_fetch_row($result)) 
+                                     {  ?>
+                                        
+                                        <option value="<?php echo $row[0]; ?>"><?php echo $row[1] ?></option>
+                                    <?php } ?>
+                                     {
+                        } 
+                        ?>
+                            </select></td>
                     </tr>
                     <tr>
                         <td>Promedio:</td>

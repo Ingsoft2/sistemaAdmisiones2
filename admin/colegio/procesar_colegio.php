@@ -17,6 +17,7 @@ switch ($_REQUEST['req_col'])
         $id = $_REQUEST['id'];
 
         $mensaje = Colegio::eliminar_colegio($id);
+        
         header('Location:../gestiones/gestionarColegio.php');
         exit();
         break;
@@ -24,8 +25,8 @@ switch ($_REQUEST['req_col'])
      case "Modificar":
 
          $id=$_POST['txt_id'];
-         $nombre = $_POST['txt_nombres'];
-        $estado = $_POST['estado'];
+         $nombre = $_POST['txt_nombre'];
+        $estado = $_POST['txt_estado'];
         $ciudad = $_POST['txt_ciudad'];
         
         

@@ -54,7 +54,7 @@ class Colegio {
     }
     
     
-      function eliminar_colegio($id)
+      static function eliminar_colegio($id)
     {
         include '../conexion.php';
         $mensaje = "resultados:";
@@ -65,6 +65,7 @@ class Colegio {
             $mensaje.="Error Eliminando aspirante en la base de datos: " . mysql_error();
         } else {
             $mensaje.="El aspirante con identificacion " . $id . " fue eliminado del sistema";
+            
         }
         
         return $mensaje;
@@ -74,21 +75,19 @@ class Colegio {
      static function editarColegio($id,$pNombre, $pEstado, $pCiudad) {
         include '../conexion.php';
         
-      
-       $sql = "UPDATE aspirante SET "
-              . "nombre='".$pNombre."', "
-              . "estado='".$pEstado."', "
-              . "ciudad='".$pCiudad."', "              
-              . "WHERE id_colegio=".$id;
+      if ($id==NULL || $pCiudad==NULL)
+      {
+       $sql = "UPDATE colegio SET nombre='$pNombre', estado='$pEstado', ciudad='$pCiudad WHERE id_colegio=$id";
        
        $sql1= "update colegio set nombre='".$pNombre."'," 
                ."estado='".$pEstado."'," 
                ."ciudad= '".$pCiudad."' "
                . "where id_colegio =".$id;
- 
-           
-      mysql_query($sql1);      
-      header('Location:../gestiones/gestionarColegio.php');
+               mysql_query($sql);      
+               header('Location:../gestiones/gestionarColegio.php');
+      }
+      else
+          echo "Debe especificar un 'id'.\n";
     }
     
 }
