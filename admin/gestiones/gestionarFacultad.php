@@ -17,8 +17,12 @@ and open the template in the editor.
             <div id="info"> 
                 <a href="../facultad/agregarFacultad.php"><img src="../../img/facultad/agregarFacultad.png" width="100" height="80">Agregar facultad</a>
                 <a href="../facultad/buscarFacultad.php"><img src="../../img/facultad/buscarFacultad.png" width="100" height="80">Buscar Facultad</a> 
-            <a href="modificarFacultad.php"><img src="../../img/facultad/modificarFacultad.png" width="100" height="80">Modificar Facultad</a> 
-            <a href="eliminarFacultad.php"><img src="../../img/facultad/eliminarFacultad.png" width="100" height="80">Eliminar Facultad</a> 
+                <br> 
+                <br> 
+             <?php include '../conexion.php';
+                include '../facultad/Facultad.php';
+                  Facultad::lista_facultad('facultad');
+                ?>
                </div> 
         </div>
     </body>

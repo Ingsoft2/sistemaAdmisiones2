@@ -1,40 +1,30 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <link type="text/css" rel="stylesheet" href="../../css/style.css">
         <meta charset="UTF-8">
-        <title></title>
+        <title>Gestionar Facultad</title>
     </head>
     <?php include ("Header.php"); ?>
     <body>
-        
-        <div id="section">
-            <br>
-        <form action="">
+            <br>      
+            <form action="procesar_facultad.php" method="post">
         <table border="1">
             <thead>
                 <tr align="center">
+                    
                     <th colspan="2">Datos facultad</th>
                     
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Id facultad:</td>
-                    <td><input type="text" name="txt_id_facultad" value="" required=""/></td>
-                </tr>
+            <tbody>    
+                
                 <tr>
                     <td>Nombre</td>
-                    <td><input type="text" name="txt_nombre_facultad" value="" required=""/></td>
+                    <td><input type="text" name="txt_nombres" value="" required=""/></td>
                 </tr>
                 <tr>
                     <td>Fecha de creación:</td>
-                    <td><input type="date" name="txt_fecha_creacion" value="" required=""/></td>
+                    <td><input type="date" name="txt_creacion" value="" required=""/></td>
                 </tr>
                 
             </tbody>
@@ -42,12 +32,13 @@ and open the template in the editor.
          <table>
                 <tr>
                     <td>
-            <input type="submit" value="Agregar" class="boton"/>
+            <input type="submit" value="Enviar" class="boton"/>
+            <input type="hidden" value="Enviar" name="req_fac">
             </td>
             </tr>
             </table>
-</form>
-            </div>
+                
+            </form>
     </body>
     <?php
 include("fooder.php"); 
