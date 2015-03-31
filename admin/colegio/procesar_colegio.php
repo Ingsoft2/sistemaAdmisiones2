@@ -13,7 +13,7 @@ switch ($_REQUEST['req_col'])
       exit();
       
       case "eliminar":
-
+          
          
         $id = $_REQUEST['id'];
 
