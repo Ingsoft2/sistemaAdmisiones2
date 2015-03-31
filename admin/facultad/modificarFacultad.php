@@ -32,7 +32,7 @@ and open the template in the editor.
                    
                     <tr>
                         <td>*Fecha de creacion:</td>
-                        <td><input type="date" name="txt_creacion" value="<?php echo $_REQUEST['fecha_creacion']; ?>" required=""/></td>
+                        <td><input type="date" name="txt_creacion" value="<?php echo $_REQUEST['fechaCreacion']; ?>" required=""/></td>
                     </tr>
                    
                     
