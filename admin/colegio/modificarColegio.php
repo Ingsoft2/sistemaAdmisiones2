@@ -22,7 +22,7 @@
                     </tr>
                     <tr>
                         <td>Nombres:</td>
-                        <td><input type="text" name="txt_nombre" value="<?php echo $_REQUEST['nombre'];?>" required=""/> <textarea><?php echo $_REQUEST["nombre"]; ?></textarea></td>
+                        <td><input type="text" name="txt_nombre" value="<?php echo $_REQUEST['nombre'];?>" required=""/></td>
                     </tr>
                     <tr colspan="3">
                         <td>Estado:</td>
