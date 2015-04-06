@@ -46,6 +46,8 @@ class Aspirante {
         }
     }
 
+    //Insertar aspirante en la BD
+
     static function insertarAspirante($pIdentificacion, $pNombre, $pApellido, $pFecha_nacimiento, $pLugar_nacimiento, $pGenero, $pColegio, $pPromedio, $pFoto, $pTipo_imagen) {
         include '../conexion.php';
         $mensaje = "resultados: ";
@@ -64,7 +66,7 @@ class Aspirante {
     public function lista_aspirante($tabla) {
         
         include '../conexion.php';
-        $result = mysql_query("SELECT * FROM aspirante");
+        $result = mysql_query("select aspirante.identificacion, aspirante.nombres, aspirante.apellidos, aspirante.fecha_nacimiento, aspirante.lugar_nacimiento, aspirante.genero, colegio.nombre, aspirante.promedio, aspirante.id_colegio  from aspirante, colegio where aspirante.id_colegio = colegio.id_colegio");
         echo "<table border = '3'> \n";
         echo "<tr><td>IDENTIFICACION</td><td>NOMBRES</td><td>APELLIDOS</td><td>FECHA NACIMIENTO</td><td>LUGAR NACIMIENTO</td><td>GENERO</td><td>ID COLEGIO</td><td>PROMEDIO</td><td>OPCIONES</td></tr> \n";
         while ($row = mysql_fetch_row($result)) {

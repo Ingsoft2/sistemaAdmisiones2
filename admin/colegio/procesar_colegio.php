@@ -24,18 +24,25 @@ switch ($_REQUEST['req_col'])
         break;
     
      case "Modificar":
-
-         $id=$_POST['txt_id'];
+if(isset($_POST['txt_id']))
+{
+    $id= (int)$_POST['txt_id'];
+    
+    if($id>0)
+    {
+        
          $nombre = $_POST['txt_nombre'];
         $estado = $_POST['txt_estado'];
-        $ciudad = $_POST['txt_ciudad'];
-        
-        
-        
-        Colegio::editarColegio($id, $pNombre, $pEstado, $pCiudad);
+        $ciudad = $_POST['txt_ciudad'];  
+        Colegio::editarColegio($id, $nombre, $estado, $ciudad);
         header('Location:../gestiones/gestionarColegio.php');
-        
-        
+    }
+    else
+        echo 'id menor a 0';
+}
+else
+    echo 'no existe la variable id';
+       
 }
 
 ?>

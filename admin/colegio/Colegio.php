@@ -47,8 +47,8 @@ class Colegio {
         echo "<tr id=tit><td >&nbsp;ID_COLEGIO&nbsp;</td><td>&nbsp;NOMBRE&nbsp;</td><td>&nbsp;CIUDAD&nbsp;</td><td>&nbsp;ESTADO&nbsp;</td><td>&nbsp;OPCIONES&nbsp;</td></tr> \n";
         while ($row = mysql_fetch_row($result)) 
                 {
-            echo "<tr id=resul><td>$row[0]</td><td>$row[1]</td><td>$row[2]</td><td>$row[3]</td>". "<td><a href=../colegio/procesar_colegio.php?req_col=eliminar&id=".$row[0]."><img src=../../img/Colegio/elmn.png width=25px heigt=25px /> &nbsp;&nbsp;&nbsp;  </a><a href=../colegio/modificarColegio.php?req_col=modificar&id=".$row[0].
-                    "&nombre=".$row[1]."". "&estado=".$row[2]."&ciudad=".$row[3]."> <img src=../../img/Colegio/mdf.png width=25px heigt=25px /></a></td> "  . "</tr> \n";
+            echo "<tr id=resul><td>$row[0]</td><td>$row[1]</td><td>$row[2]</td><td>$row[3]</td>". "<td><a href=../colegio/procesar_colegio.php?req_col=eliminar&id=".$row[0]."><img src=../../img/Colegio/elmn.png width=25px heigt=25px /> &nbsp;&nbsp;&nbsp;  </a>"
+                    . "<a href=../colegio/modificarColegio.php?req_col=modificar&id=$row[0]&nombre=".$row[1]."&estado=$row[2]&ciudad=$row[3]> <img src=../../img/Colegio/mdf.png width=25px heigt=25px /></a></td> "  . "</tr> \n";
            // echo "<td><a href=editar_estudiante.php?id=".$row[$campos[0]].">Editar</a></td>";
             
             
@@ -76,11 +76,11 @@ class Colegio {
     }
 
      static function editarColegio($id,$pNombre, $pEstado, $pCiudad) {
-        include '../conexion.php';
+         include_once '../conexion.php';
         
-      if ($id==NULL || $pCiudad==NULL)
+      if ($id==NULL || $pCiudad==NULL || $pEstado==NULL)
       {
-       $sql = "UPDATE colegio SET nombre='$pNombre', estado='$pEstado', ciudad='$pCiudad WHERE id_colegio=$id";
+       $sql = "UPDATE colegio SET nombre='$pNombre', estado='$pEstado', ciudad='$pCiudad' WHERE id_colegio=$id";
        
        $sql1= "update colegio set nombre='".$pNombre."'," 
                ."estado='".$pEstado."'," 
