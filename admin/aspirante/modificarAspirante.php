@@ -54,7 +54,7 @@ and open the template in the editor.
                         <td>*Colegio:</td>
                         <td> 
                             <?php $result = mysql_query("SELECT * FROM colegio"); ?>
-                            <select name="txt_colegio" <?php echo $_REQUEST['colegio'];?>"> <?php  while ($row = mysql_fetch_row($result)) 
+                            <select name="txt_colegio" <?php echo $_REQUEST['colegio'];?>> <?php  while ($row = mysql_fetch_row($result)) 
                                      {  ?>
                                         
                                         <option value="<?php echo $row[0]; ?>"><?php echo $row[1] ?></option>

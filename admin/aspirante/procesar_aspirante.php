@@ -1,7 +1,5 @@
 <?php
 
-
-
 include './Aspirante.php';
 switch ($_REQUEST['req_asp']) {
     case "Enviar":
@@ -78,6 +76,14 @@ switch ($_REQUEST['req_asp']) {
         $colegio = $_POST['txt_colegio'];
         $promedio = $_POST['txt_promedio'];
  
+       /* echo $nombres;
+        echo $apellidos;
+        echo $fecha_nacimiento;
+        echo $lugar_nacimiento;
+        echo $genero;
+        echo $colegio;
+        echo $promedio;*/
+        
         $id_b;
         
         
@@ -99,7 +105,7 @@ switch ($_REQUEST['req_asp']) {
         echo '<script> alert("El numero de identificacion ('.$identificacion_nueva.') ya se encuentra en uso"); location.href="../aspirante/modificarAspirante.php?id='.$identificacion_actual.'&nombre='.$nombres.'&apellido='.$apellidos.'&fecha_nacimiento='.$fecha_nacimiento.'&lugar_nacimiento='.$lugar_nacimiento.'&colegio='.$colegio.'&promedio='.$promedio.'";</script>';
         }}
         else{
-    include '';
+    
               if($identificacion_actual != $identificacion_nueva && $identificacion_nueva!=null){
             Aspirante::editarAspirante($identificacion_actual, $identificacion_nueva, $nombres, $apellidos, $fecha_nacimiento, $lugar_nacimiento, $genero, $colegio, $promedio);
         }else{

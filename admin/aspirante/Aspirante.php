@@ -102,13 +102,13 @@ class Aspirante {
          while ($registros = mysql_fetch_array($consulta)){
              echo $registros['identificacion'];
          }*/
-      echo $pIdentificacion;
+     
      
       /*$sql = "UPDATE aspirante set identificacion=".$pIdentificacion." where identificacion=".$pIdentificacion_actual;
         mysql_query($sql);*/
         
-      
-      $sql = "UPDATE aspirante SET identificacion".$pIdentificacion.", "
+      echo $pIdentificacion_actual;
+      $sql = "UPDATE aspirante SET identificacion=".$pIdentificacion.", "
               . "nombres='".$pNombre."', "
               . "apellidos='".$pApellido."', "
               . "fecha_nacimiento='".$pFecha_nacimiento."', "
