@@ -62,19 +62,22 @@ class Facultad {
         return $mensaje;
     }
     
-     static function editarFacultad($pNombre_actual, $pNombre, $pFechaCreacion){
-    {
-       include '../conexion.php';
-      echo $pNombre;    
-      
-      $sql = "UPDATE facultad SET nombre".$pNombre.", "
-              . "fechaCreacion='".$pFechaCreacion."' WHERE nombre=".$pNombre_actual;
+    
+     static function editarFacultad($id,$pNombre, $pFechaCreacion) {
+         include_once '../conexion.php';
         
-        mysql_query($sql);
-        
-        header('Location:../gestiones/gestionarFacultad.php');
-
+      if ($id==NULL || $pFechaCreacion==NULL)
+      {
+       $sql = "UPDATE facultad SET nombre='$pNombre', fechaCreacion='$pFechaCreacion' WHERE id_facultad=$id";
+       
+       $sql1= "update facultad set nombre='".$pNombre."'," 
+               ."fechaCreacion='".$pFechaCreacion."'," 
+               . "where id_facultad =".$id;
+               mysql_query($sql);      
+               header('Location:../gestiones/gestionarFacultad.php');
+      }
+      else
+          echo "Debe especificar un 'id'.\n";
     }
     
-}
 }

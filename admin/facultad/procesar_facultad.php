@@ -22,18 +22,25 @@ switch ($_REQUEST['req_fac'])
         exit();
         break;
     
-     case "Modificar":
-
-        $nombre = $_POST['txt_nombre'];
-        $estado = $_POST['txt_creacion'];
-      
-        
-        
-        
-        Facultad::editarFacultad($pNombre, $pFechaCreacion);
-        header('Location:../gestiones/gestionarFacultad.php');
+      case "Modificar":
+if(isset($_POST['txt_id']))
+{
+    $id= (int)$_POST['txt_id'];
     
+    if($id>0)
+    {
         
+         $nombre = $_POST['txt_nombre'];
+        $estado = $_POST['txt_fechaCreacion']; 
+        Colegio::editarColegio($id, $nombre, $fechaCreacion);
+        header('Location:../gestiones/gestionarFacultad.php');
+    }
+    else
+        echo 'id menor a 0';
+}
+else
+    echo 'no existe la variable id';
+       
 }
 
 ?>

@@ -15,7 +15,7 @@ and open the template in the editor.
         <div id="section">
         <br>
        
-        <form name="formu" id="formu" method="POST" enctype="multipart/form-data" action="procesar_facultad.php" >
+        <form name="formu" id="formu" method="POST" enctype="multipart/form-data" action="editarFacultad.php" >
             <table border="1">
                 <thead>
                     <tr align ="center">
@@ -24,6 +24,10 @@ and open the template in the editor.
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td>Codigo</td>
+                        <td><input  type="text" name="id" readonly value="<?php echo $_REQUEST['id'];?>" required=""/></td>
+                    </tr>
                     
                    <tr>
                         <td>*Nombre actual:</td>
