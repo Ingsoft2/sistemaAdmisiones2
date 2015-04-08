@@ -19,6 +19,11 @@ and open the template in the editor.
                 <a href="../facultad/buscarFacultad.php"><img src="../../img/programa/b.png" width="100" height="80">Buscar Programa</a> 
                 <a href="modificarFacultad.php"><img src="../../img/programa/m.png" width="100" height="80">Modificar Programa</a> 
                 <a href="eliminarFacultad.php"><img src="../../img/programa/x.png" width="100" height="80">Eliminar Programa</a> 
+                 <?php include '../conexion.php';
+                include '../programa/Programa.php';
+                Programa::lista_programa('programa');
+                  
+                ?>
                </div> 
         </div>
         

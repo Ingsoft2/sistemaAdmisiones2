@@ -65,9 +65,9 @@ class Colegio {
        
         $sql = @mysql_query("delete from colegio where id_colegio=$id");
         if (!$sql) {
-            $mensaje.="Error Eliminando aspirante en la base de datos: " . mysql_error();
+            $mensaje.="Error Eliminando el colegio en la base de datos: " . mysql_error();
         } else {
-            $mensaje.="El aspirante con identificacion " . $id . " fue eliminado del sistema";
+            $mensaje.="El colegio con identificacion " . $id . " fue eliminado del sistema";
             
         }
         
