@@ -27,29 +27,33 @@ and open the template in the editor.
                 <tbody>
                     <tr>
                         <td>Nombre:</td>
-                        <td><input type="text" name="txt_nom" value="<?php echo $_REQUEST['nom'];?>" required=""/></td>
+                        <td><input type="text" name="txt_nom" value="<?php echo $_REQUEST['nombre'];?>" required=""/></td>
                     </tr>
                     <tr>
                         <td>Fecha Registro</td>
-                        <td><input type="date" name="txt_fecha" value="<?php echo $_REQUEST['txt_fecha'];?>" required=""/></td>
+                        <td><input type="date" name="txt_fecha" value="<?php echo $_REQUEST['fechaR'];?>" required=""/></td>
                     </tr>
-                    <tr>
+                    <tr colspan="3">
                         <td>Acreditacion</td>
-                        <td><input type="date" name="txt_nacimiento" value="<?php echo $_REQUEST['fecha_nacimiento']; ?>" required=""/></td>
+                        
+                        <td> <input type="text"  value="<?php echo $_REQUEST['acreditacion'];?>" readonly=""/>
+                            <select name="acreditacion" required >
+                    
+                    <option>Alta</option>
+                    <option>Media</option>
+                    <option>Baja</option>
+                </select>
+                        </td>
                     </tr>
                     <tr>
-                        <td>*Lugar de nacimiento</td>
-                        <td><input type="text" name="txt_lugarnacimiento" value="<?php echo $_REQUEST['lugar_nacimiento'];?>" required=""/></td>
+                        <td>Numero Admitidos</td>
+                        <td><input type="text" name="txt_numAd" value="<?php echo $_REQUEST['totalAspirantes'];?>" required=""/></td>
                     </tr>
                     <tr>
-                        <td>*Género:</td>
-                        <td>Masculino<input type="radio" name="genero" value="Masculino" checked=""/>Femenino<input type="radio" name="genero" value="Femenino"></td>
-                    </tr>
-                    <tr>
-                        <td>*Colegio:</td>
+                        <td>Facultad</td>
                         <td> 
-                            <?php $result = mysql_query("SELECT * FROM colegio"); ?>
-                            <select name="txt_colegio" <?php echo $_REQUEST['colegio'];?>> <?php  while ($row = mysql_fetch_row($result)) 
+                            <?php $result = mysql_query("SELECT * FROM facultad"); ?>
+                            <select name="txt_idf" <?php echo $_REQUEST['facultad'];?>> <?php  while ($row = mysql_fetch_row($result)) 
                                      {  ?>
                                         
                                         <option value="<?php echo $row[0]; ?>"><?php echo $row[1] ?></option>
@@ -59,15 +63,7 @@ and open the template in the editor.
                         ?>
                             </select></td>
                     </tr>
-                    <tr>
-                        <td>*Promedio:</td>
-                        <td><input type="text" name="txt_promedio" value="<?php echo $_REQUEST['promedio'];?>" required=""td>
-                    </tr>
-                    <tr>
-                        <td>Foto:</td>
-                        <td><input type="file" name="foto" id="foto" /></td>
-                    </tr>
-                    
+                                       
                 </tbody>
             </table>
             
@@ -75,7 +71,7 @@ and open the template in the editor.
                 <tr>
                     <td>
             <input type="submit" value="Modificar" class="boton"/>
-            <input type="hidden" value="Modificar" name="req_asp">
+            <input type="hidden" value="Modificar" name="req_prog">
             </td>
             </tr>
             </table>

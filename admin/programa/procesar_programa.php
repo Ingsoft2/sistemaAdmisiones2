@@ -17,12 +17,10 @@ switch ($_REQUEST['req_prog'])
         exit();
       
         case "eliminar":
-          
-         
+
         $id = $_REQUEST['id'];
 
         $mensaje = Programa::eliminar_programa($id);
-        
         header('Location:../gestiones/gestionarPrograma.php');
         exit();
         break;

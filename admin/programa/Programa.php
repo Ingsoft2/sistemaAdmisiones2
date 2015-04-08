@@ -66,23 +66,17 @@ class Programa {
         }
         
         static function eliminar_programa($id)
-        {
-            include '../conexion.php';
-            $mensaje = "resultados:";
-            //Insertar usuario en la BD  
-       
-            $sql = @mysql_query("delete from programa where idprograma=$id");
-            if (!$sql) {
+    {
+        include '../conexion.php';
+        $mensaje = "resultados:";
+        //Insertar usuario en la BD        
+        $sql = @mysql_query("DELETE FROM programa WHERE identificacion=$id");
+        if (!$sql) {
             $mensaje.="Error Eliminando programa en la base de datos: " . mysql_error();
-        } 
-            else 
-                {
-            $mensaje.="El colegio con identificacion " . $id . " fue eliminado del sistema";
-            
+        } else {
+            $mensaje.="El programa con identificacion " . $id . " fue eliminado del sistema";
         }
-        
         return $mensaje;
-       
     }
 }
 
