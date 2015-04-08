@@ -70,7 +70,7 @@ class Programa {
         include '../conexion.php';
         $mensaje = "resultados:";
         //Insertar usuario en la BD        
-        $sql = @mysql_query("DELETE FROM programa WHERE identificacion=$id");
+        $sql = @mysql_query("DELETE FROM programa WHERE idprograma=$id");
         if (!$sql) {
             $mensaje.="Error Eliminando programa en la base de datos: " . mysql_error();
         } else {
