@@ -8,8 +8,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <link type="text/css" rel="stylesheet" href="../../css/style.css">
-        
-        <title></title>
+        <title>Gestionar Programa</title>    
     </head>
     <?php include ("Header.php"); ?>
     <body>
@@ -40,7 +39,11 @@ and open the template in the editor.
                     <option>Media</option>
                     <option>Baja</option>
                         </select></td>
-            </tr>
+                    </tr>
+                    <tr>
+                        <td>Numero Admitidos</td>
+                        <td><input type="" name="txt_fecha" value="" required=""/></td>
+                    </tr>
              
            
                 </tbody>
