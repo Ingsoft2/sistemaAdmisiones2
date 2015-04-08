@@ -1,5 +1,5 @@
 <?php
-include './Colegio.php';
+include './Programa.php';
 switch ($_REQUEST['req_prog'])
 {
     case "Enviar":
