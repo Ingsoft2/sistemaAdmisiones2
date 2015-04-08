@@ -11,7 +11,9 @@ switch ($_REQUEST['req_prog'])
         $idFacultad = $_POST['txt_idf'];
                 
         $mensaje = Programa::insetarPrograma($nombre, $fechaAsignacion, $acreditacion, $numAdmitidos, $idFacultad);
+        
         header('Location:../gestiones/gestionarPrograma.php'); 
+        
         exit();
       
         case "eliminar":
@@ -46,7 +48,10 @@ switch ($_REQUEST['req_prog'])
     }
     else
     echo 'no existe la variable id';
-       
+     exit();
+        break;
+        
+        echo 'error de envio';
 }
 
 ?>

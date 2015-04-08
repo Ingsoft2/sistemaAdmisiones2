@@ -71,10 +71,7 @@ and open the template in the editor.
             <input type="submit" value="Enviar" class="boton"/>
             <input type="hidden" value="Enviar" name="req_prog">
             </td>
-            <td>
-            <input type="submit" value="Regresar" class="boton"/>
-            <input type="hidden" value="Regresar" name="req_prog">
-            </td>
+            
             </tr>
             </table>
 <br>

@@ -51,7 +51,7 @@ class Programa {
         public function lista_programa($tabla)
         {
             include '../conexion.php';
-            $result = mysql_query("SELECT * FROM programa");
+            $result = mysql_query("select programa.idprograma, programa.nombre, programa.fechaRegistro, programa.estadoAcreditacion, programa.TotalAspirantes, facultad.nombre, programa.facultad_idfacultad from programa, facultad where programa.facultad_idfacultad = facultad.id_facultad  ");
             echo "<table border = '3' id=res > \n";
             echo "<tr id=tit><td >&nbsp;ID_PROGRAMA&nbsp;</td><td>&nbsp;NOMBRE&nbsp;</td><td>&nbsp;FECHA REGISTRO&nbsp;</td><td>&nbsp;ACREDITACION&nbsp;</td><td>&nbsp;NUMERO ADMITIDOS&nbsp;</td><td>&nbsp;FACULTAD&nbsp;</td><td>&nbsp;OPCIONES&nbsp;</td></tr> \n";
             while ($row = mysql_fetch_row($result)) 
