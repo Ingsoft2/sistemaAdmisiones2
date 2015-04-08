@@ -11,11 +11,12 @@ and open the template in the editor.
         <title>Gestionar Programa</title>    
     </head>
     <?php include ("Header.php"); ?>
+    <?php include ("../conexion.php"); ?>
     <body>
         <div id="section">
         <br>
         
-        <form method="POST" enctype="multipart/form-data" action="procesar_aspirante.php" >
+        <form method="POST" enctype="multipart/form-data" action="procesar_programa.php" >
             <table border="1">
                 <thead>
                     <tr align ="center">
@@ -42,7 +43,21 @@ and open the template in the editor.
                     </tr>
                     <tr>
                         <td>Numero Admitidos</td>
-                        <td><input type="" name="txt_fecha" value="" required=""/></td>
+                        <td><input type="text" name="txt_numAd" value="" required=""/></td>
+                    </tr>
+                    <tr>
+                        <td>Codigo Facultad</td>
+                        <td> 
+                            <?php $result = mysql_query("SELECT * FROM facultad"); ?>
+                            <select name="txt_idf"> <?php  while ($row = mysql_fetch_row($result)) 
+                                     {  ?>
+                                        
+                                        <option value="<?php echo $row[0]; ?>"><?php echo $row[1] ?></option>
+                                    <?php } ?>
+                                     {
+                        } 
+                        ?>
+                            </select></td>
                     </tr>
              
            
