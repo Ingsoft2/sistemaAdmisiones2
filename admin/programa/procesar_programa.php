@@ -1,6 +1,6 @@
 <?php
 include './Colegio.php';
-switch ($_REQUEST['req_col'])
+switch ($_REQUEST['req_prog'])
 {
     case "Enviar":
         

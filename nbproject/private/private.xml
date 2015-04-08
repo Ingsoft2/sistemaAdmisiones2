@@ -11,6 +11,18 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/aspirante/Aspirante.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/programa/procesar_programa.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/Source%20Packages/sistemaAdmisiones.mundo/Aspirante.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/colegio/Colegio.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/colegio/agregarColegio.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/programa/Programa.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/aspirante/procesar_aspirante.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/aspirante/agregarAspirante.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/facultad/Facultad.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/gestiones/gestionarColegio.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/programa/agregarPrograma.php</file>
+        </group>
     </open-files>
 </project-private>

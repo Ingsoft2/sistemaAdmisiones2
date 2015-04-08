@@ -15,7 +15,7 @@ and open the template in the editor.
         <div id="section">
         <br>
         
-        <form method="POST" enctype="multipart/form-data" action="procesar_aspirante.php" >
+        <form method="POST" enctype="multipart/form-data" action="procesar_programa.php" >
             <table border="1">
                 <thead>
                     <tr align ="center">
