@@ -5,7 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
+    <head> <!-- from para modificar la informacion de la facultas  -->
         <meta charset="UTF-8">
         <link type="text/css" rel="stylesheet" href="../../css/style.css">
         <title>Gestionar Facultad</title>

@@ -1,4 +1,7 @@
 <?php
+/**
+ * switch que ayuda a definir el proceso que deve seguir segun la respuesta enviada
+ */
 include './Colegio.php';
 switch ($_REQUEST['req_col'])
 {

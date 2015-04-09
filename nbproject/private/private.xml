@@ -11,6 +11,16 @@
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/programa/procesar_programa.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/colegio/procesar_colegio.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/programa/Programa.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/colegio/modificarColegio.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/programa/fooder.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/programa/editarPrograma.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/conexion.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/gestiones/gestionarPrograma.php</file>
+            <file>file:/C:/xampp/htdocs/sistemaAdmisiones/admin/gestiones/gestionarColegio.php</file>
+        </group>
     </open-files>
 </project-private>

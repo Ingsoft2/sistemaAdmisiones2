@@ -1,5 +1,6 @@
 <html>
     <head>
+        <!-- from para modificar la informacion de la facultad -->
         <link type="text/css" rel="stylesheet" href="../../css/style.css">
         <meta charset="UTF-8">
         <title>Gestionar Facultad</title>
@@ -7,7 +8,7 @@
     <?php include ("Header.php"); ?>
     <body>
             <br>      
-            <form action="procesar_facultad.php" method="post">
+            <form action="procesar_facultad.php" method="post"> 
         <table border="1">
             <thead>
                 <tr align="center">
@@ -19,7 +20,7 @@
             <tbody>    
                 
                 <tr>
-                    <td>Nombre</td>
+                    <td>Nombre</td> <!-- form para recibir la informacion de la facultad -->
                     <td><input type="text" name="txt_nombres" value="" required=""/></td>
                 </tr>
                 <tr>

@@ -1,6 +1,6 @@
 <header>
             <div id="header">
-               <h1>Universidad la Gorgona</h1>
+               <h1>Universidad la Gorgona</h1> <!-- titulo de la pagina -->
                 <div id="logo">
                      <a href="./">
                          <img src="../../img/logo.png" width="450" height="140">
@@ -12,6 +12,7 @@
     <nav>
                 <div id="nav">
                     <ul>
+                        <!-- nav de opciones de la pagina -->
                         <li><a href="../gestiones/gestionarFacultad.php">Gestionar facultad</a></li>
                         <li> <a href="../gestiones/gestionarPrograma.php">Gestionar programa</a></li>
                         <li> <a href="../gestiones/gestionarColegio.php">Gestionar colegio</a></li>

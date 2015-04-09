@@ -2,6 +2,10 @@
 include './Programa.php';
 switch ($_REQUEST['req_prog'])
 {
+    
+    /**
+     * switch que que envia al metodo solicitado por el administrador
+     */
     case "Enviar":
         
         $nombre = $_POST['txt_nom'];

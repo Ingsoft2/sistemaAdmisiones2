@@ -20,7 +20,14 @@ class Programa {
     var $numAdmitidos;
     var $idFacultad;
             
-    
+    /**
+     * metodo q inisialisa los programas
+     * @param type $nombre
+     * @param type $fechaAsignacion
+     * @param type $acreditacion
+     * @param type $numAdmitidos
+     * @param type $idFacultad
+     */
     function Programa($nombre, $fechaAsignacion, $acreditacion,$numAdmitidos,$idFacultad)
     {
         $this->nombre = $nombre;
@@ -30,6 +37,16 @@ class Programa {
         $this->idFacultad =$idFacultad;
         
     }    
+    
+    /**
+     * metodo que inserta los programas en la base de datos
+     * @param type $pNombre
+     * @param type $pFecha
+     * @param type $pAcreditacion
+     * @param type $pNumAdmitidos
+     * @param type $pIdfacultad
+     * @return string
+     */
     static function insetarPrograma($pNombre, $pFecha, $pAcreditacion,$pNumAdmitidos,$pIdfacultad)
     {
         include '../conexion.php';
@@ -47,7 +64,10 @@ class Programa {
             }
             return $mensaje;
         }
-        
+        /**
+         * metodo q lista los programas para ser vistos en el from de gestion
+         * @param type $tabla
+         */
         public function lista_programa($tabla)
         {
             include '../conexion.php';
@@ -65,6 +85,11 @@ class Programa {
             echo "</table> \n";
         }
         
+        /**
+         * metodo que elimina el programa de la base de datos
+         * @param type $id
+         * @return string
+         */
         static function eliminar_programa($id)
     {
         include '../conexion.php';

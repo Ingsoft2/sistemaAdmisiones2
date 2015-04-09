@@ -1,6 +1,9 @@
 <?php
 
 include './Aspirante.php';
+/**
+ * switch que decide la funcion a realizar 
+ */
 switch ($_REQUEST['req_asp']) {
     case "Enviar":
 
@@ -65,7 +68,9 @@ switch ($_REQUEST['req_asp']) {
         break;
 
     case "Modificar":
-
+/**
+ * accion de modificar el aspirante
+ */
         $identificacion_actual = $_POST['txt_identificacion'];
         $identificacion_nueva = $_POST['txt_nueva_identificacion'];
         $nombres = $_POST['txt_nombres'];
@@ -91,7 +96,9 @@ switch ($_REQUEST['req_asp']) {
        $id_b=$identificacion_nueva;
            
         }else{  $id_b=$identificacion_actual; }
-
+/**
+ * cambia la identificacion 
+ */
  
         require '../conexion.php';
         $sql = @mysql_query("SELECT identificacion FROM aspirante WHERE identificacion=".$id_b);

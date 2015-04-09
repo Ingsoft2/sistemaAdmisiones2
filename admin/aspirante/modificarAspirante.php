@@ -15,7 +15,7 @@ and open the template in the editor.
     <body>
         <div id="section">
         <br>
-       
+       <!-- formulario para modificar aspirante -->
         <form name="formu" id="formu" method="POST" enctype="multipart/form-data" action="procesar_aspirante.php" >
             <table border="1">
                 <thead>
@@ -79,6 +79,7 @@ and open the template in the editor.
             <table>
                 <tr>
                     <td>
+                         <!-- botones de modificacion -->
             <input type="submit" value="Modificar" class="boton"/>
             <input type="hidden" value="Modificar" name="req_asp">
             </td>

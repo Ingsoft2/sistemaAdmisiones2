@@ -7,6 +7,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <!-- index de el back end para el tratamiento de la informacion por el administrador -->
         <link type="text/css" rel="stylesheet" href="../css/style.css">
         <meta charset="UTF-8">
         <title>Sistema de admisiones</title>

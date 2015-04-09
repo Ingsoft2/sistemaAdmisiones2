@@ -1,5 +1,7 @@
 <?php //include ("Header.php");
- 
+ /**
+  * metodo encargado de el tratamiento de las fotos para subirlas a la base de datos
+  */
  require './conexion.php';
 //si la variable imagen no ha sido definida nos dara un advertencia.
         $id = 2;

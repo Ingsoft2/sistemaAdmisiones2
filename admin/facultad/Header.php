@@ -1,4 +1,5 @@
 <header>
+    <!-- header de las paginas de facultad-->
             <div id="header">
                <h1>Universidad la Gorgona</h1>
                 <div id="logo">
@@ -11,7 +12,7 @@
     
     <nav>
                 <div id="nav">
-                    <ul>
+                    <ul> <!-- nav de las opciones -->
                         <li><a href="../gestiones/gestionarFacultad.php">Gestionar facultad</a></li>
                         <li> <a href="../gestiones/gestionarPrograma.php">Gestionar programa</a></li>
                         <li> <a href="../gestiones/gestionarColegio.php">Gestionar colegio</a></li>

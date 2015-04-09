@@ -1,18 +1,19 @@
+<!-- from que se contiene el formulario pa editar los colegios de la base de datos -->
 <html>
     <head>
         <link type="text/css" rel="stylesheet" href="../../css/style.css">
         <meta charset="UTF-8">
         <title>Gestionar Colegio</title>
     </head>
-    <?php include ("Header.php"); ?>
+    <?php include ("Header.php"); ?> <!-- inclucion del header en la base de datos -->
     <body>
         <br>
         <form name="formu" id="formu" method="POST"  action="editar.php">
-            <table border="1">
+            <table border="1"> <!-- tabla que recibe los dats para modificarlos -->
                 <thead>
                     <tr align ="center">
                         
-                        <th colspan="2">Modifiar Colegio</th>
+                        <th colspan="2">Modifiar Colegio</th> <!-- titulo del from -->
                     </tr>
                 </thead>
                 <tbody>
@@ -56,6 +57,6 @@
         </form>
     </body>
     <?php
-include("fooder.php"); 
-?>
+include("fooder.php");?> <!-- inclucion del footer en la pafina -->
+
 </html>

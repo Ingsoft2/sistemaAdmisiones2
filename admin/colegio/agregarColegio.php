@@ -1,8 +1,9 @@
+<!-- from para ageregar el colegio a la base de datos -->
 <html>
     <head>
         <link type="text/css" rel="stylesheet" href="../../css/style.css">
         <meta charset="UTF-8">
-        <title>Gestionar Colegio</title>
+        <title>Gestionar Colegio</title> <!--  titulo de la pagina-->
     </head>
     <?php include ("Header.php"); ?>
     <body>
@@ -12,7 +13,7 @@
                 <thead>
                     <tr align ="center">
                         
-                        <th colspan="2">Datos Colegio</th>
+                        <th colspan="2">Datos Colegio</th> <!-- titulos de el formulario -->
                     </tr>
                 </thead>
                 <tbody>

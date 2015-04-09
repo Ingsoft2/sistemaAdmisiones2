@@ -1,4 +1,7 @@
 <?php
+/**
+ * metodo encargado de modificar la informacion de la facultad
+ */
  //Verificamos si se ha definido la variable @id que tiene el id del registro
 if(isset($_POST['id']))
     {

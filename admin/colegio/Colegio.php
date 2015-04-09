@@ -23,7 +23,13 @@ class Colegio {
        $this->estado = $estado;
        $this->ciudad = $ciudad;
    }
-   
+   /**
+    * Inserta el colegio a la base de datos
+    * @param type $pNombre
+    * @param type $pEstado
+    * @param type $pCiudad
+    * @return string
+    */
     static function insertarColegio($pNombre, $pEstado, $pCiudad) {
         include '../conexion.php';
         $mensaje = "resultados: ";
@@ -38,7 +44,10 @@ class Colegio {
         return $mensaje;
     }
     
-    
+    /**
+     * lista los colegios para ser visibles en la interfaz
+     * @param type $tabla
+     */
     public function lista_colegios($tabla) {
         
         include '../conexion.php';
@@ -56,7 +65,11 @@ class Colegio {
         echo "</table> \n";
     }
     
-    
+    /**
+     * elimina colegio de la base de datos
+     * @param type $id
+     * @return string
+     */    
       static function eliminar_colegio($id)
     {
         include '../conexion.php';
@@ -75,6 +88,13 @@ class Colegio {
        
     }
 
+    /**
+     * edita el colegio en la base de datos
+     * @param type $id
+     * @param type $pNombre
+     * @param type $pEstado
+     * @param type $pCiudad
+     */
      static function editarColegio($id,$pNombre, $pEstado, $pCiudad) {
          include_once '../conexion.php';
         

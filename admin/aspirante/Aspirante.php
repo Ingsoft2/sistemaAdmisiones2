@@ -11,6 +11,13 @@
  *
  * @author MiPc
  */
+
+
+/**
+ * Description of Aspirante
+ *Creasion del aspirante
+ * @author MiPc
+ */
 class Aspirante {
 
     var $nombre;
@@ -36,6 +43,12 @@ class Aspirante {
         $this->foto = $foto;
     }
 
+    
+    /**
+ * Description of Aspirante
+ *metodo para agregar la imagen del aspirante
+ * @author MiPc
+ */
     static function insertarImagen($data, $tipo) {
         include '../conexion.php';
         $resultado = mysql_query("INSERT INTO imagen (imagen, tipo_imagen) VALUES ('$data', '$tipo')");
@@ -48,6 +61,21 @@ class Aspirante {
 
     //Insertar aspirante en la BD
 
+    /**
+ * Description of Aspirante
+ *Metodo que agrega un aspirante a la base de datos 
+ * @param int $pidentificacion identificacion del aspirante
+ * @param String $pNombre nombre del aspirante
+     * @param String $pApellidos Apellidos del aspirante
+     * @param Date $pfecha fecha nacimiento del aspirante
+     * @param String $pGenero genero del aspirante
+     * @param String $pColegio colegio del que se graduo el aspirante 
+     * @param int $pPromedio promedio del resultado en las pruebas del aspirante
+     * @param File $pFoto foto del aspirante
+     * @param tipe $pTipo_imagen tipo de la imagen del aspirante
+     *  
+ * @author MiPc
+ */
     static function insertarAspirante($pIdentificacion, $pNombre, $pApellido, $pFecha_nacimiento, $pLugar_nacimiento, $pGenero, $pColegio, $pPromedio, $pFoto, $pTipo_imagen) {
         include '../conexion.php';
         $mensaje = "resultados: ";
@@ -63,6 +91,10 @@ class Aspirante {
         return $mensaje;
     }
 
+    /**
+     * Crea la lista de aspirates en en mundo
+     * @param type $tabla
+     */
     public function lista_aspirante($tabla) {
         
         include '../conexion.php';
@@ -79,7 +111,11 @@ class Aspirante {
     }
     
     
-    
+    /**
+     * elimina el aspirante selecionado de la lista
+     * @param type $id
+     * @return string
+     */
     static function eliminar_aspirante($id)
     {
         include '../conexion.php';
@@ -94,6 +130,19 @@ class Aspirante {
         return $mensaje;
     }
     
+    
+    /**
+     * edita el aspirante escogido en la ista 
+     * @param type $pIdentificacion_actual
+     * @param type $pIdentificacion
+     * @param type $pNombre
+     * @param type $pApellido
+     * @param type $pFecha_nacimiento
+     * @param type $pLugar_nacimiento
+     * @param type $pGenero
+     * @param type $pColegio
+     * @param type $pPromedio
+     */
      static function editarAspirante($pIdentificacion_actual, $pIdentificacion, $pNombre, $pApellido, $pFecha_nacimiento, $pLugar_nacimiento, $pGenero, $pColegio, $pPromedio)
     {
        include '../conexion.php';

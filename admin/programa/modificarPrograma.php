@@ -6,6 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <!-- from que contiene el formulario para editar un programa-->
         <meta charset="UTF-8">
         <link type="text/css" rel="stylesheet" href="../../css/style.css">
         <title></title>

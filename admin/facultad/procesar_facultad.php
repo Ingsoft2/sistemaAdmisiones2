@@ -2,6 +2,9 @@
 include './Facultad.php';
 switch ($_REQUEST['req_fac'])
 {
+    /**
+     * switch para enviar al metodo correspondiente en cada accion 
+     */
     case "Enviar":
         
         $nombre = $_POST['txt_nombres'];

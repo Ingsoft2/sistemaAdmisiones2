@@ -1,5 +1,8 @@
 
         <?php
+        /**
+         * php que se encarga de la modificacion de el colegio en la base de datos
+         */
             //Verificamos si se ha definido la variable @id que tiene el id del registro
 if(isset($_POST['id']))
     {

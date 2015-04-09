@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * metodo que modifica un programa de la base de datos
+ */
 //Verificamos si se ha definido la variable @id que tiene el id del registro
 if(isset($_POST['txt_id']))
     {

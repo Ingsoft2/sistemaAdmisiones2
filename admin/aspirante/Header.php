@@ -1,9 +1,9 @@
 <header>
             <div id="header">
-               <h1>Universidad la Gorgona</h1>
+               <h1>Universidad la Gorgona</h1> <!-- titulo de la universidad  -->
                 <div id="logo">
-                     <a href="./">
-                         <img src="../../img/logo.png" width="450" height="140">
+                     <a href="./"> 
+                         <img src="../../img/logo.png" width="450" height="140"> <!-- logo de la aplicaccion  -->
                          
                     </a>
                 </div>
@@ -11,7 +11,7 @@
     
     <nav>
                 <div id="nav">
-                    <ul>
+                    <ul> <!--  inclucion de las diferentes gestiones -->
                         <li><a href="../gestiones/gestionarFacultad.php">Gestionar facultad</a></li>
                         <li> <a href="../gestiones/gestionarPrograma.php">Gestionar programa</a></li>
                         <li> <a href="../gestiones/gestionarColegio.php">Gestionar colegio</a></li>

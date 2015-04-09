@@ -6,6 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <!-- from para agregar un programa a la base de datos -->
         <meta charset="UTF-8">
         <link type="text/css" rel="stylesheet" href="../../css/style.css">
         <title>Gestionar Programa</title>    

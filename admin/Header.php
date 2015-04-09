@@ -1,6 +1,7 @@
 <header>
             <div id="header">
                <h1>Universidad la Gorgona</h1>
+               <!-- headere de el index -->
                 <div id="logo">
                      <a href="./">
                          <img src="../img/logo.png" width="450" height="140">

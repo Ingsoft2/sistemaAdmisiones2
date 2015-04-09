@@ -1,5 +1,6 @@
 <header>
             <div id="header">
+                <!-- header de las paginas de programa -->
                <h1>Universidad la Gorgona</h1>
                 <div id="logo">
                      <a href="./">

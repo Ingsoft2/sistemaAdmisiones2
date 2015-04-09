@@ -10,13 +10,23 @@ class Facultad {
     var $nombre;
     var $fechaCreacion;
  
-
+/**
+ * inicialisador de facultad
+ * @param type $nombre
+ * @param type $fechaCreacion
+ */
     function Facultad($nombre, $fechaCreacion)
     {
         $this->nombre = $nombre;
         $this->fechaCreacion = $fechaCreacion;
     }
 
+    /**
+     * insertar facultad a la base de datos
+     * @param type $pNombre
+     * @param type $pFechaCreacion
+     * @return string
+     */
     static function insertarFacultad($pNombre, $pFechaCreacion) {
         include '../conexion.php';
         $mensaje = "resultados: ";
@@ -31,6 +41,10 @@ class Facultad {
         return $mensaje;
     }
 
+    /**
+     * lista la tabla de facultades para ser visualizada en la gestion
+     * @param type $tabla
+     */
     public function lista_facultad($tabla) {
         
         include '../conexion.php';
@@ -47,7 +61,11 @@ class Facultad {
     }
     
     
-    
+    /**
+     * eliminar facultad de la base de datos 
+     * @param type $id
+     * @return string
+     */
     static function eliminar_facultad($id)
     {
         include '../conexion.php';
@@ -62,7 +80,12 @@ class Facultad {
         return $mensaje;
     }
     
-    
+    /**
+     * edita la facultad elegida en la base de datos
+     * @param type $id
+     * @param type $pNombre
+     * @param type $pFechaCreacion
+     */
      static function editarFacultad($id,$pNombre, $pFechaCreacion) {
          include_once '../conexion.php';
         

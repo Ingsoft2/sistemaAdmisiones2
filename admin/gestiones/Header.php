@@ -1,4 +1,5 @@
 <header>
+    <!-- header de las paginas de gestion de cada dependencia-->
             <div id="header">
                <h1>Universidad la Gorgona</h1>
                 <div id="logo">
