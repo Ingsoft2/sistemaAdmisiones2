@@ -17,7 +17,8 @@ and open the template in the editor.
             <div id="info"> 
                 <a href="../programa/agregarPrograma.php"><img src="../../img/programa/+.png" width="100" height="80">Agregar Programa</a>
                 <a href="../facultad/buscarFacultad.php"><img src="../../img/programa/b.png" width="100" height="80">Buscar Programa</a> 
-                
+                <br>
+                <br>
                  <?php include '../conexion.php';
                 include '../programa/Programa.php';
                 Programa::lista_programa('programa');

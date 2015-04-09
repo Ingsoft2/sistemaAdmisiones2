@@ -57,7 +57,7 @@ class Programa {
             while ($row = mysql_fetch_row($result)) 
                 {
                 echo "<tr id=resul><td>$row[0]</td><td>$row[1]</td><td>$row[2]</td><td>$row[3]</td><td>$row[4]</td><td>$row[5]</td>". "<td><a href=../programa/procesar_programa.php?req_prog=eliminar&id=".$row[0]."><img src=../../img/Colegio/elmn.png width=25px heigt=25px /></a>" 
-                    . "&nbsp;&nbsp;&nbsp;  <a href=../programa/modificarPrograma.php?req_prog=modificar&id=$row[0]&nombre=".$row[1]."&fechaAsignacion=$row[2]&acreditacion=$row[3] &numAdmitidos=$row[4] &idFacultad=$row[5]> <img src=../../img/Colegio/mdf.png width=25px heigt=25px /></a></td> "  . "</tr> \n";
+                    . "&nbsp;&nbsp;&nbsp;  <a href=../programa/modificarPrograma.php?req_prog=modificar&id=$row[0]&nombre=".$row[1]."&fechaAsignacion=$row[2]&acreditacion=$row[3]&numAdmitidos=$row[4]&idFacultad=$row[5]> <img src=../../img/Colegio/mdf.png width=25px heigt=25px /></a></td> "  . "</tr> \n";
            // echo "<td><a href=editar_estudiante.php?id=".$row[$campos[0]].">Editar</a></td>";
             
             
