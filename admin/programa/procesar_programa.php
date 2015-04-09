@@ -6,7 +6,7 @@ switch ($_REQUEST['req_prog'])
         
         $nombre = $_POST['txt_nom'];
         $fechaAsignacion =$_POST['txt_fecha'];
-        $acreditacion = $_POST['txt_acre'];
+        $acreditacion = $_POST['acreditacion'];
         $numAdmitidos = $_POST['txt_numAd'];
         $idFacultad = $_POST['txt_idf'];
                 

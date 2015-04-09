@@ -41,7 +41,7 @@ and open the template in the editor.
                         <td>Acreditacion</td>
                         
                         <td> <input type="text"  value="<?php echo $_REQUEST['acreditacion'];?>" readonly=""/>
-                            <select name="acreditacion" required >
+                            <select name="txt_acre" required >
                     
                     <option>Alta</option>
                     <option>Media</option>

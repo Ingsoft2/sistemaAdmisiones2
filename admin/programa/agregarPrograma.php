@@ -34,8 +34,8 @@ and open the template in the editor.
                         <td><input type="date" name="txt_fecha" value="" required=""/></td>
                     </tr>
                     <tr>
-                        <td>Acreditacion</td>
-                        <td> <select name="acreditacion">
+                    <td>Acreditacion</td>
+                    <td> <select name="acreditacion">
                     <option>Alta</option>
                     <option>Media</option>
                     <option>Baja</option>
