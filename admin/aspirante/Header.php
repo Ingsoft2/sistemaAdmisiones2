@@ -20,6 +20,7 @@
                            <li> <a href="#">Registrar resultados</a></li>
                            <li> <a href="#">Ingresar aspirante</a></li>
                           
+                          
                          
                     </ul>
                 </div>

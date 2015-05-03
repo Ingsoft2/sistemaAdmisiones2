@@ -24,7 +24,9 @@ and open the template in the editor.
          <?php include '../conexion.php';
                 include '../aspirante/Aspirante.php';
                   Aspirante::lista_aspirante('aspirante');
+                 
                 ?>
+         
                </div> 
         </div>
     <?php

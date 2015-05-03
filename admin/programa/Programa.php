@@ -71,13 +71,13 @@ class Programa {
         public function lista_programa($tabla)
         {
             include '../conexion.php';
-            $result = mysql_query("select programa.idprograma, programa.nombre, programa.fechaRegistro, programa.estadoAcreditacion, programa.TotalAspirantes, facultad.nombre, programa.facultad_idfacultad from programa, facultad where programa.facultad_idfacultad = facultad.id_facultad  ");
+            $result = mysql_query("select programa.idprograma, programa.nombre, programa.fechaRegistro, programa.estadoAcreditacion, programa.TotalAspirantes, facultad.nombre as 'nomfacu', programa.facultad_idfacultad from programa, facultad where programa.facultad_idfacultad = facultad.id_facultad  ");
             echo "<table border = '3' id=res > \n";
             echo "<tr id=tit><td >&nbsp;ID_PROGRAMA&nbsp;</td><td>&nbsp;NOMBRE&nbsp;</td><td>&nbsp;FECHA REGISTRO&nbsp;</td><td>&nbsp;ACREDITACION&nbsp;</td><td>&nbsp;NUMERO ADMITIDOS&nbsp;</td><td>&nbsp;FACULTAD&nbsp;</td><td>&nbsp;OPCIONES&nbsp;</td></tr> \n";
-            while ($row = mysql_fetch_row($result)) 
+            while ($campos = mysql_fetch_object($result)) 
                 {
-                echo "<tr id=resul><td>$row[0]</td><td>$row[1]</td><td>$row[2]</td><td>$row[3]</td><td>$row[4]</td><td>$row[5]</td>". "<td><a href=../programa/procesar_programa.php?req_prog=eliminar&id=".$row[0]."><img src=../../img/Colegio/elmn.png width=25px heigt=25px /></a>" 
-                    . "&nbsp;&nbsp;&nbsp;  <a href=../programa/modificarPrograma.php?req_prog=modificar&id=$row[0]&nombre=".$row[1]."&fechaAsignacion=$row[2]&acreditacion=$row[3]&numAdmitidos=$row[4]&idFacultad=$row[5]> <img src=../../img/Colegio/mdf.png width=25px heigt=25px /></a></td> "  . "</tr> \n";
+                echo "<tr id=resul><td>$campos->idprograma</td><td>$campos->nombre</td><td>$campos->fechaRegistro</td><td>$campos->estadoAcreditacion</td><td>$campos->TotalAspirantes</td><td>$campos->nomfacu</td>". "<td><a href=../programa/procesar_programa.php?req_prog=eliminar&id=".$campos->idprograma."><img src=../../img/Colegio/elmn.png width=25px heigt=25px /></a>" 
+                    . "&nbsp;&nbsp;&nbsp;  <a href=../programa/modificarPrograma.php?req_prog=modificar&id=$campos->idprograma&nombre=".$campos->nombre."&fechaAsignacion=$campos->fechaRegistro&acreditacion=$campos->estadoAcreditacion&numAdmitidos=$campos->TotalAspirantes&idFacultad=$campos->facultad_idfacultad> <img src=../../img/Colegio/mdf.png width=25px heigt=25px /></a></td> "  . "</tr> \n";
            // echo "<td><a href=editar_estudiante.php?id=".$row[$campos[0]].">Editar</a></td>";
             
             

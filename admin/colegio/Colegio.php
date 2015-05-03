@@ -34,6 +34,7 @@ class Colegio {
         include '../conexion.php';
         $mensaje = "resultados: ";
         //Insertar Colegio en la BD
+        
         $sql = @mysql_query("INSERT INTO colegio(nombre, estado, ciudad) "
                         . "VALUES('$pNombre','$pEstado','$pCiudad')");
         if (!$sql) {
@@ -47,6 +48,10 @@ class Colegio {
     /**
      * lista los colegios para ser visibles en la interfaz
      * @param type $tabla
+     * id_colegio
+     * nombre
+     * estado
+     * ciudad
      */
     public function lista_colegios($tabla) {
         
@@ -54,10 +59,10 @@ class Colegio {
         $result = mysql_query("SELECT * FROM colegio");
         echo "<table border = '3' id=res > \n";
         echo "<tr id=tit><td >&nbsp;ID_COLEGIO&nbsp;</td><td>&nbsp;NOMBRE&nbsp;</td><td>&nbsp;CIUDAD&nbsp;</td><td>&nbsp;ESTADO&nbsp;</td><td>&nbsp;OPCIONES&nbsp;</td></tr> \n";
-        while ($row = mysql_fetch_row($result)) 
+        while ($campo=mysql_fetch_object($result)) 
                 {
-            echo "<tr id=resul><td>$row[0]</td><td>$row[1]</td><td>$row[2]</td><td>$row[3]</td>". "<td><a href=../colegio/procesar_colegio.php?req_col=eliminar&id=".$row[0]."><img src=../../img/Colegio/elmn.png width=25px heigt=25px /></a>" 
-                    . "&nbsp;&nbsp;&nbsp;  <a href=../colegio/modificarColegio.php?req_col=modificar&id=$row[0]&nombre=".$row[1]."&estado=$row[2]&ciudad=$row[3]> <img src=../../img/Colegio/mdf.png width=25px heigt=25px /></a></td> "  . "</tr> \n";
+            echo "<tr id=resul><td>$campo->id_colegio</td><td>$campo->nombre</td><td>$campo->estado</td><td>$campo->ciudad</td>". "<td><a href=../colegio/procesar_colegio.php?req_col=eliminar&id=".$campo->id_colegio.";><img src=../../img/Colegio/elmn.png width=25px heigt=25px /></a>" 
+                    . "&nbsp;&nbsp;&nbsp;  <a href=../colegio/modificarColegio.php?req_col=modificar&id=$campo->id_colegio;&nombre=".$campo->nombre."&estado=$campo->estado&ciudad=$campo->ciudad> <img src=../../img/Colegio/mdf.png width=25px heigt=25px /></a></td> "  . "</tr> \n";
            // echo "<td><a href=editar_estudiante.php?id=".$row[$campos[0]].">Editar</a></td>";
             
             

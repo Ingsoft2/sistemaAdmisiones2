@@ -46,29 +46,45 @@ and open the template in the editor.
                     </tr>
                     <tr>
                         <td>Lugar de nacimiento</td>
-                        <td><input type="text" name="txt_lugarnacimiento" value="" required=""/></td>
+                        <td><input  type="text" name="txt_lugarnacimiento" value="" required=""/></td>
                     </tr>
                     <tr>
                         <td>Género:</td>
-                        <td>Masculino<input type="radio" name="genero" value="Masculino"/>Femenino<input type="radio" name="genero" value="Femenino"></td>
+                        <td>Masculino<input  type="radio" name="genero" value="Masculino"/>Femenino<input type="radio" name="genero" value="Femenino"></td>
                     </tr>
                     <tr>
-                        <td>Colegio:</td>
+                         <td>*Colegio:</td>
                         <td> 
                             <?php $result = mysql_query("SELECT * FROM colegio"); ?>
-                            <select name="txt_colegio"> <?php  while ($row = mysql_fetch_row($result)) 
+                            <select name="txt_colegio" > 
+                                <?php  while ($campo = mysql_fetch_object($result)) 
                                      {  ?>
                                         
-                                        <option value="<?php echo $row[0]; ?>"><?php echo $row[1] ?></option>
+                                        <option value="<?php echo $campo->id_colegio; ?>"><?php echo $campo->nombre ?></option>
                                     <?php } ?>
                                      {
-                        } 
-                        ?>
+                         
+                        
                             </select></td>
                     </tr>
                     <tr>
-                        <td>Promedio:</td>
-                        <td><input type="text" name="txt_promedio" value="" required=""td>
+                        <td>Resultado Pruebas Saber:</td>
+                        <td><input type="text" name="txt_saber" value="" required=""/> </td>
+                    </tr>
+                    <tr>
+                        <td>Programa:</td>
+                        <td> 
+                            <?php $result = mysql_query("SELECT * FROM programa"); ?>
+                            <select name="txt_prog"> 
+                                <?php  while ($campo = mysql_fetch_object($result)) 
+                                     {  ?>
+                                        
+                                        <option value="<?php echo $campo->idprograma; ?>"><?php echo $campo->nombre; ?></option>
+                                    <?php } ?>
+                                     {
+                         
+                        
+                            </select></td>
                     </tr>
                     <tr>
                         <td>Foto:</td>

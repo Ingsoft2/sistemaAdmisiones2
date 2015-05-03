@@ -8,60 +8,72 @@ switch ($_REQUEST['req_asp']) {
     case "Enviar":
 
         $identificacion = $_POST['txt_identificacion'];
-
         $nombres = $_POST['txt_nombres'];
         $apellidos = $_POST['txt_apellidos'];
         $fecha_nacimiento = $_POST['txt_nacimiento'];
         $lugar_nacimiento = $_POST['txt_lugarnacimiento'];
         $genero = $_POST['genero'];
         $colegio = $_POST['txt_colegio'];
-        $promedio = $_POST['txt_promedio'];
+        $saber = $_POST['txt_saber'];
+        $prog=$_POST['txt_prog'];
+        $nomimagen = rand(0,1000)."p".rand(100,1000)."_".rand(999,200000000).$_FILES['foto']['name'];   
+        $ruta="Fotos/". $nomimagen;
+        $temp=$_FILES['foto']['tmp_name'];
+           
+        
 
         require '../conexion.php';
 
 //comprobamos si ha ocurrido un error.
-        if (!isset($_FILES["foto"]) || $_FILES["foto"]["error"] > 0) {
-            echo "ha ocurrido un error";
-        } else {
-            //ahora vamos a verificar si el tipo de archivo es un tipo de imagen permitido.
-            //y que el tamano del archivo no exceda los 16mb
-            $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
-            $limite_kb = 16384; //16mb es el limite de medium blob
-
-            if (in_array($_FILES['foto']['type'], $permitidos) && $_FILES['foto']['size'] <= $limite_kb * 1024) {
-
-                //este es el archivo temporal
-                $imagen_temporal = $_FILES['foto']['tmp_name'];
-                //este es el tipo de archivo
-                $tipo = $_FILES['foto']['type'];
-                //leer el archivo temporal en binario
-                $fp = fopen($imagen_temporal, 'r+b');
-                $data = fread($fp, filesize($imagen_temporal));
-                fclose($fp);
-                //escapar los caracteres
-                $data = mysql_escape_string($data);
-
-                $resultado = mysql_query("INSERT INTO imagenes (imagen, tipo_imagen) VALUES ('$data', '$tipo')");
-                if ($resultado) {
-                    echo "el archivo ha sido copiado exitosamente";
-                } else {
-                    echo "ocurrio un error al copiar el archivo.";
+        if ($_FILES["foto"]["error"] > 0){
+ echo "ha ocurrido un error";
+}
+else { $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
+       $limite_kb = 300;
+       if (in_array($_FILES['foto']['type'], $permitidos) && $_FILES['foto']['size'] <= $limite_kb * 1024)
+       {
+        if (!file_exists($ruta)){
+        $resultado = move_uploaded_file($_FILES['foto']['tmp_name'], $ruta);
+	if ($resultado){
+            echo "el archivo ha sido movido exitosamente";
+             $mensaje = Aspirante::insertarAspirante($identificacion, $nombres, $apellidos, $fecha_nacimiento, $lugar_nacimiento, $genero, $colegio, $saber, $nomimagen,$prog);
+            if ($mensaje){
+               echo "<script>alert('Datos registrados');location.href='../gestiones/gestionAraspirante.php';</script>";
+                }                     
+                } 
+                else {
+		echo "ocurrio un error al mover el archivo.";
+                echo "$nomimagen y $ruta";
                 }
-            } else {
+                }
+                else {
+		echo $_FILES['imge']['name'] . ", este archivo existe";
+                echo"<script>alert('archivo ya existe en la cartelera')</script>"; 
+		}
+                }
+                else{
                 echo "archivo no permitido, es tipo de archivo prohibido o excede el tamano de $limite_kb Kilobytes";
-            }
-        }
+                }
+                }
+       
 
         // Aspirante::insertarImagen($data, $tipo);
-        $mensaje = Aspirante::insertarAspirante($identificacion, $nombres, $apellidos, $fecha_nacimiento, $lugar_nacimiento, $genero, $colegio, $promedio, $data, $tipo);
-        header('Location:../gestiones/gestionAraspirante.php');
+       
+     
         exit();
         break;
         
     case "eliminar":
 
-        $id = $_REQUEST['id'];
+        $id = $_REQUEST['id'];        
+        $mensaje = Aspirante::eliminar_aspirante($id);
+        header('Location:../gestiones/gestionAraspirante.php');
+        exit();
+        break;
+    
+     case "resultados":
 
+        $id = $_REQUEST['id'];        
         $mensaje = Aspirante::eliminar_aspirante($id);
         header('Location:../gestiones/gestionAraspirante.php');
         exit();

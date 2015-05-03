@@ -51,10 +51,10 @@ class Facultad {
         $result = mysql_query("SELECT * FROM facultad");
         echo "<table border = '3'> \n";
         echo "<tr><td>IDENTIFICACION</td><td>NOMBRE</td><td>FECHA CREACION</td><td>OPCIONES</td></tr> \n";
-        while ($row = mysql_fetch_row($result)) 
+        while ($campos = mysql_fetch_object($result)) 
                 {
-            echo "<tr><td>$row[0]</td><td>$row[1]</td><td>$row[2]</td>". "<td><a href=../facultad/procesar_facultad.php?req_fac=eliminar&id=".$row[0].">Borrar</a><a href=../facultad/modificarFacultad.php?req_fac=modificar&id=".$row[0].
-                    "&nombre=".$row[1]."". "&fechaCreacion=".$row[2]."> Modificar</a></td></tr> \n";
+            echo "<tr><td>$campos->id_facultad</td><td>$campos->nombre</td><td>$campos->fechaCreacion</td>". "<td><a href=../facultad/procesar_facultad.php?req_fac=eliminar&id=".$campos->id_facultad.">Borrar</a><a href=../facultad/modificarFacultad.php?req_fac=modificar&id=".$campos->id_facultad.
+                    "&nombre=".$campos->nombre."". "&fechaCreacion=".$campos->fechaCreacion."> Modificar</a></td></tr> \n";
         
         }
         echo "</table> \n";

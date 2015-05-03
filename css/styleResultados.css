@@ -1,0 +1,71 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 3, 2015, 1:55:27 AM
+    Author     : JUANCARLOS
+*/
+
+body
+{
+    background:#99cc33; 
+}
+#header2
+{
+    width: 555px;
+    height: 100px;
+    background-color: #4F5B65;//#A5CD4E; //#638cb5;
+    margin: 0 auto ;
+    padding-top: 9px;
+}
+h5{
+    font-family:“Lucida Grande”, Verdana, Helvetica, Arial, sans-serif;
+    color: white;
+    margin-top: 30px;
+    font-size: 22px;
+    margin-left:5px;
+ }
+ 
+ #imgRes
+ {
+     float: right;
+     margin-top:-90px;
+ }
+ 
+  table{
+    margin: 0 auto 0 ;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;    
+    text-align: left;    
+    border-collapse: collapse;
+    margin-top:30px;
+    margin-bottom:2px;
+  
+    
+    
+   //background-color: blue;
+}
+
+th { 
+    background: #D3D3D3; 
+    font-weight: bold; 
+}
+
+#boton
+{
+    margin: 0 auto;
+    margin-bottom:-30px;
+}
+
+.boton{
+    font-size:10px;
+        font-family:"Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+        font-weight:bold;
+        color:white;
+        background:#638cb5;
+        border:0px;
+        width:80px;
+        height:19px;
+}

@@ -44,20 +44,7 @@ class Aspirante {
     }
 
     
-    /**
- * Description of Aspirante
- *metodo para agregar la imagen del aspirante
- * @author MiPc
- */
-    static function insertarImagen($data, $tipo) {
-        include '../conexion.php';
-        $resultado = mysql_query("INSERT INTO imagen (imagen, tipo_imagen) VALUES ('$data', '$tipo')");
-        if ($resultado) {
-            echo "el archivo ha sido copiado exitosamente";
-        } else {
-            echo "ocurrio un error al copiar el archivo.";
-        }
-    }
+  
 
     //Insertar aspirante en la BD
 
@@ -76,13 +63,13 @@ class Aspirante {
      *  
  * @author MiPc
  */
-    static function insertarAspirante($pIdentificacion, $pNombre, $pApellido, $pFecha_nacimiento, $pLugar_nacimiento, $pGenero, $pColegio, $pPromedio, $pFoto, $pTipo_imagen) {
+    static function insertarAspirante($pIdentificacion, $pNombre, $pApellido, $pFecha_nacimiento, $pLugar_nacimiento, $pGenero, $pColegio, $Psaber, $nom_imagen,$prog) {
         include '../conexion.php';
         $mensaje = "resultados: ";
 //Insertar aspirante en la BD
-        echo $pTipo_imagen;
-        $sql = @mysql_query("INSERT INTO aspirante(identificacion, nombres, apellidos, fecha_nacimiento, lugar_nacimiento, genero, id_colegio, promedio, foto, tipo_imagen) "
-                        . "VALUES('$pIdentificacion','$pNombre','$pApellido','$pFecha_nacimiento','$pLugar_nacimiento','$pGenero', '$pColegio', '$pPromedio','$pFoto','$pTipo_imagen')");
+        echo $nom_imagen;
+        $sql = @mysql_query("INSERT INTO aspirante(identificacion, nombres, apellidos, fecha_nacimiento, lugar_nacimiento, genero, id_colegio, promedio, nom_imagen,idprograma)VALUES('$pIdentificacion','$pNombre','$pApellido','$pFecha_nacimiento','$pLugar_nacimiento','$pGenero', '$pColegio', '$Psaber','$nom_imagen','$prog')");
+        $sql2 = @mysql_query("insert into resultados (res_saber,identificacion) value ($Psaber,$pIdentificacion) ");
         if (!$sql) {
             $mensaje.="Error Insertando Aspirante en la base de datos: " . mysql_error();
         } else {
@@ -94,18 +81,28 @@ class Aspirante {
     /**
      * Crea la lista de aspirates en en mundo
      * @param type $tabla
+      * $campos->identificacion
+       * $campos->nombres
+       * $campos->apellidos
+       * $campos->fecha_nacimiento
+       * $campos->lugar_nacimiento
+       * $campos->genero
+       * $campos->id_colegio
+       * $campos->promedio
+       * $campos->foto
+       * $campos->tipo_imagen
+       * $campos->idprograma
      */
     public function lista_aspirante($tabla) {
         
         include '../conexion.php';
-        $result = mysql_query("select aspirante.identificacion, aspirante.nombres, aspirante.apellidos, aspirante.fecha_nacimiento, aspirante.lugar_nacimiento, aspirante.genero, colegio.nombre, aspirante.promedio, aspirante.id_colegio  from aspirante, colegio where aspirante.id_colegio = colegio.id_colegio");
+        $result = mysql_query("select aspirante.identificacion as 'identificacion', aspirante.nombres as 'nombres', aspirante.apellidos as 'apellidos', aspirante.fecha_nacimiento as 'fecha_nacimiento', aspirante.lugar_nacimiento as 'lugar_nacimiento', aspirante.genero as 'genero', colegio.nombre as 'nomCol', aspirante.promedio as 'promedio', aspirante.id_colegio as 'id_colegio', programa.nombre as 'nomProg'  from aspirante, colegio, programa where aspirante.id_colegio = colegio.id_colegio and programa.idprograma= aspirante.idprograma");
         echo "<table border = '3'> \n";
-        echo "<tr><td>IDENTIFICACION</td><td>NOMBRES</td><td>APELLIDOS</td><td>FECHA NACIMIENTO</td><td>LUGAR NACIMIENTO</td><td>GENERO</td><td>COLEGIO</td><td>PROMEDIO</td><td>OPCIONES</td></tr> \n";
-        while ($row = mysql_fetch_row($result)) {
-            echo "<tr><td>$row[0]</td><td>$row[1]</td><td>$row[2]</td><td>$row[3]</td><td>$row[4]</td><td>$row[5]</td><td>$row[6]</td><td>$row[7]</td> <td><a href=../aspirante/procesar_aspirante.php?req_asp=eliminar&id=".$row[0].">Borrar</a><a href=../aspirante/modificarAspirante.php?req_asp=modificar&id=".$row[0]."&nombre=".$row[1].""
-                    . "&apellido=".$row[2]."&fecha_nacimiento=".$row[3]."&lugar_nacimiento=".$row[4]."&colegio=".$row[6]."&promedio=".$row[7]."> Modificar</a></td></tr> \n";
+        echo "<tr><td>IDENTIFICACION</td><td>NOMBRES</td><td>APELLIDOS</td><td>FECHA NACIMIENTO</td><td>LUGAR NACIMIENTO</td><td>GENERO</td><td>COLEGIO</td><td>PROMEDIO</td><td>PROGRAMA</td><td>OPCIONES</td></tr> \n";
+        while ($campos = mysql_fetch_object($result)) {
+            echo "<tr><td>$campos->identificacion</td><td>$campos->nombres</td><td>$campos->apellidos</td><td>$campos->fecha_nacimiento</td><td>$campos->lugar_nacimiento</td><td>$campos->genero</td><td>$campos->nomCol</td><td>$campos->promedio</td><td>$campos->nomProg</td> <td><a href=../aspirante/procesar_aspirante.php?req_asp=eliminar&id=".$campos->identificacion.">Borrar</a><a href=../aspirante/modificarAspirante.php?req_asp=modificar&id=".$campos->identificacion."> Modificar</a> <a <a href='../aspirante/Resultados.php?id=".$campos->identificacion."' target='Resultados' onclick=\"window.open(this.href, this.target, 'width=600, height=400, menubar=no, resizable=NO');return false;\"> Resultados</a></td></tr> \n";
            // echo "<td><a href=editar_estudiante.php?id=".$row[$campos[0]].">Editar</a></td>";
-            
+       
         }
         echo "</table> \n";
     }
@@ -120,7 +117,8 @@ class Aspirante {
     {
         include '../conexion.php';
         $mensaje = "resultados:";
-        //Insertar usuario en la BD        
+        //Insertar usuario en la BD   
+        $sql1= @mysql_query("delete from resultados where identificacion=$id" );
         $sql = @mysql_query("DELETE FROM aspirante WHERE identificacion=$id");
         if (!$sql) {
             $mensaje.="Error Eliminando aspirante en la base de datos: " . mysql_error();
@@ -154,7 +152,19 @@ class Aspirante {
      
      
       /*$sql = "UPDATE aspirante set identificacion=".$pIdentificacion." where identificacion=".$pIdentificacion_actual;
-        mysql_query($sql);*/
+        mysql_query($sql);
+       * identificacion
+       * nombres
+       * apellidos
+       * fecha_nacimiento
+       * lugar_nacimiento
+       * genero
+       * id_colegio
+       * promedio
+       * foto
+       * tipo_imagen
+       * idprograma
+       */
         
       echo $pIdentificacion_actual;
       $sql = "UPDATE aspirante SET identificacion=".$pIdentificacion.", "
