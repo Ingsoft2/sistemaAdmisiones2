@@ -17,9 +17,8 @@
                         <li> <a href="../admin/gestiones/gestionarPrograma.php">Gestionar programa</a></li>
                         <li> <a href="../admin/gestiones/gestionarColegio.php">Gestionar colegio</a></li>
                         <li> <a href="../admin/gestiones/gestionAraspirante.php">Gestionar aspirante</a></li>
-                           <li> <a href="#">Consultar admitidos</a></li>
-                           <li> <a href="#">Registrar resultados</a></li>
-                           <li> <a href="#">Ingresar aspirante</a></li>
+                        <li> <a href="../admin/gestiones/consultarAdmitidos.php">Consultar admitidos</a></li>
+                        <li> <a href="#">Ingresar aspirante</a></li>
                           
                          
                     </ul>
