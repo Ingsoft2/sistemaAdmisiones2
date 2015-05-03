@@ -8,10 +8,11 @@ $consulta=  mysql_query($sql);
 }
  else 
 {
-$sql =("select aspirante.identificacion as 'identificacion', aspirante.nombres as 'nombres', aspirante.apellidos as 'apellidos', aspirante.fecha_nacimiento as 'fecha_nacimiento', aspirante.lugar_nacimiento as 'lugar_nacimiento', aspirante.genero as 'genero', colegio.nombre as 'nomCol', aspirante.promedio as 'promedio', aspirante.id_colegio as 'id_colegio', programa.nombre as 'nomProg'  from aspirante, colegio, programa where aspirante.id_colegio = colegio.id_colegio and aspirante.idprograma=$id ");
+$sql =("select aspirante.identificacion as 'identificacion', aspirante.nombres as 'nombres', aspirante.apellidos as 'apellidos', aspirante.fecha_nacimiento as 'fecha_nacimiento', aspirante.lugar_nacimiento as 'lugar_nacimiento', aspirante.genero as 'genero', colegio.nombre as 'nomCol', aspirante.promedio as 'promedio', aspirante.id_colegio as 'id_colegio', programa.nombre as 'nomProg'  from aspirante, colegio, programa where aspirante.id_colegio = colegio.id_colegio and programa.idprograma= aspirante.idprograma and aspirante.idprograma=$id ");
 $consulta=  mysql_query($sql);    
 }
-
+$sql= ("select programa.TotalAspirantes as 'total' from programa where idprograma=$id");
+$consulta2= mysql_query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +45,7 @@ $consulta=  mysql_query($sql);
                 <?php $result = mysql_query("SELECT * FROM programa"); ?>
                     <select name="txt_prog" onchange="mostrar(this.value)">
                <option value="0">Seleccione un programa</option>   
+                
                 <?php  while ($campo = mysql_fetch_object($result)) 
                 {  ?>
                 <option value="<?php echo $campo->idprograma; ?>"><?php echo $campo->nombre; ?></option>
@@ -74,7 +76,8 @@ $consulta=  mysql_query($sql);
                         <td>Programa</td>
                         <td>Estado</td>
                     </tr>
-                    <?php while ($campos = mysql_fetch_object($consulta)) {?>
+                    <?php $campos2 = mysql_fetch_object($consulta2); $total=$campos2->total; $cont=1;?>
+                   <?php while ($campos = mysql_fetch_object($consulta)) {?>
                     <tr>
                        
                         <td><?php echo $campos->identificacion?></td>
@@ -85,7 +88,12 @@ $consulta=  mysql_query($sql);
                         <td><?php echo $campos->genero;?></td>
                         <td><?php echo $campos->nomCol;?></td>
                         <td><?php echo $campos->nomProg;?></td>
-                        <td>Estado</td>
+                        <?php if($cont<$total)
+                        {?>
+                        <td>Admitido</td>
+                        <?php } else if($cont<$total){ ?>
+                         <td>No admitido</td>
+                        <?php } ?>
                     </tr>
                     <?php } ?>
                 </tbody>
