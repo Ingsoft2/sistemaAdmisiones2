@@ -10,7 +10,8 @@ switch ($_REQUEST['req_col'])
         $nombre = $_POST['txt_nombres'];
         $estado = $_POST['estado'];
         $ciudad = $_POST['txt_ciudad'];
-                
+          if(is_string($ciudad))
+              
         $mensaje = Colegio::insertarColegio($nombre, $estado, $ciudad);
      header('Location:../gestiones/gestionarColegio.php'); 
       exit();
