@@ -20,6 +20,7 @@ $consulta2= mysql_query($sql);
     <head>
         <meta charset="UTF-8">
         <link type="text/css" rel="stylesheet" href="../../css/style.css">
+        <link type="text/css" rel="stylesheet" href="../../css/StyleColegio.css">
         <script src="pruebA.js"></script>
         <title></title>
     </head>
@@ -58,14 +59,16 @@ $consulta2= mysql_query($sql);
                 
             <br>
             <br>
-                <table border="1">          
+              <?php if($id!=0) {?>
+                <table border="1" id="res">          
                 <thead>
                     <tr align ="center">                       
                         <th colspan="9">Lista de admitidos por programas</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
+                    
+                        <tr id="tit">
                         <td>Identificación</td>
                         <td>Nombres</td>
                         <td>Apellidos</td>
@@ -76,9 +79,10 @@ $consulta2= mysql_query($sql);
                         <td>Programa</td>
                         <td>Estado</td>
                     </tr>
+                    
                     <?php $campos2 = mysql_fetch_object($consulta2); $total=$campos2->total; $cont=1;?>
                    <?php while ($campos = mysql_fetch_object($consulta)) {?>
-                    <tr>
+                    <tr id="resul">
                        
                         <td><?php echo $campos->identificacion?></td>
                         <td><?php echo $campos->nombres;?></td>
@@ -95,6 +99,7 @@ $consulta2= mysql_query($sql);
                          <td>No admitido</td>
                         <?php } ?>
                     </tr>
+                    <?php } ?>
                     <?php } ?>
                 </tbody>
             </table>

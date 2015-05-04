@@ -58,6 +58,7 @@ class Colegio {
         include '../conexion.php';
         $result = mysql_query("SELECT * FROM colegio");
         echo "<table border = '3' id=res > \n";
+        echo "<tr align =center> <th colspan=5>Lista de colegios</th> </tr>";
         echo "<tr id=tit><td >&nbsp;ID_COLEGIO&nbsp;</td><td>&nbsp;NOMBRE&nbsp;</td><td>&nbsp;CIUDAD&nbsp;</td><td>&nbsp;ESTADO&nbsp;</td><td>&nbsp;OPCIONES&nbsp;</td></tr> \n";
         while ($campo=mysql_fetch_object($result)) 
                 {
