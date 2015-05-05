@@ -58,8 +58,8 @@ and open the template in the editor.
         
     </head> <!--   -->
        
-        <title></title>
-    </head>
+       
+    
     <header>
             <div id="header2" >
                <h5>Universidad la Gorgona</h5> <!-- titulo de la universidad  -->

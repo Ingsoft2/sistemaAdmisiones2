@@ -63,12 +63,12 @@ class Aspirante {
      *  
  * @author MiPc
  */
-    static function insertarAspirante($pIdentificacion, $pNombre, $pApellido, $pFecha_nacimiento, $pLugar_nacimiento, $pGenero, $pColegio, $Psaber, $nom_imagen,$prog) {
+    static function insertarAspirante($pIdentificacion, $pNombre, $pApellido, $pFecha_nacimiento, $pLugar_nacimiento, $pGenero, $pColegio, $Psaber, $nom_imagen,$prog,$pPromedio) {
         include '../conexion.php';
         $mensaje = "resultados: ";
 //Insertar aspirante en la BD
         echo $nom_imagen;
-        $sql = @mysql_query("INSERT INTO aspirante(identificacion, nombres, apellidos, fecha_nacimiento, lugar_nacimiento, genero, id_colegio, promedio, nom_imagen,idprograma)VALUES('$pIdentificacion','$pNombre','$pApellido','$pFecha_nacimiento','$pLugar_nacimiento','$pGenero', '$pColegio', '$Psaber','$nom_imagen','$prog')");
+        $sql = @mysql_query("INSERT INTO aspirante(identificacion, nombres, apellidos, fecha_nacimiento, lugar_nacimiento, genero, id_colegio, promedio, nom_imagen,idprograma)VALUES('$pIdentificacion','$pNombre','$pApellido','$pFecha_nacimiento','$pLugar_nacimiento','$pGenero', '$pColegio', '$pPromedio','$nom_imagen','$prog')");
         $sql2 = @mysql_query("insert into resultados (res_saber,identificacion) value ($Psaber,$pIdentificacion) ");
         if (!$sql) {
             $mensaje.="Error Insertando Aspirante en la base de datos: " . mysql_error();
@@ -118,6 +118,12 @@ class Aspirante {
     {
         include '../conexion.php';
         $mensaje = "resultados:";
+         $sql1 ="select * from aspirante where identificacion=$id";
+                              $consulta1=  mysql_query($sql1);
+                              $campos1=  mysql_fetch_object($consulta1);
+                              $nomimagenv = $campos1->nom_imagen;   
+                              $rutav="Fotos/";
+                              unlink($rutav.$nomimagenv);       
         //Insertar usuario en la BD   
         $sql1= @mysql_query("delete from resultados where identificacion=$id" );
         $sql = @mysql_query("DELETE FROM aspirante WHERE identificacion=$id");

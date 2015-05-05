@@ -71,6 +71,10 @@ and open the template in the editor.
                         <td>Resultado Pruebas Saber:</td>
                         <td><input type="text" name="txt_saber" value="" required=""/> </td>
                     </tr>
+                     <tr>
+                        <td>promedio del colegio:</td>
+                        <td><input type="text" name="txt_promedio" value="" required=""/> </td>
+                    </tr>
                     <tr>
                         <td>Programa:</td>
                         <td> 
