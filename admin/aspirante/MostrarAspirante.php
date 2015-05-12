@@ -5,13 +5,13 @@ include ("../conexion.php");
 include '../conexioni.php';
         $mysql = new conexioni();
         $mysqli=$mysql->conctar();
-        $consulta= "select * from aspirante where identificacion = $id";
+        $consulta= "select aspirante.*, resultados.* from aspirante, resultados where aspirante.identificacion = resultados.identificacion and aspirante.identificacion= $id";
         $result   = $mysqli->query($consulta);
         $campos = mysqli_fetch_object($result);
 
-$sql1 ="select * from resultados where identificacion = $id";
-$consulta1=  mysql_query($sql1);
-$campos1=  mysql_fetch_object($consulta1);
+        $consulta1 ="select * from resultados where identificacion = $id";
+        $result1=  $mysqli->query($consulta);
+        $campos1=  mysqli_fetch_object($result1);
         
 ?>
 <!DOCTYPE html>
@@ -19,6 +19,9 @@ $campos1=  mysql_fetch_object($consulta1);
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
+                       
+res_examen
+res_entrevista
 -->
 <html>
     <head>
@@ -83,8 +86,38 @@ and open the template in the editor.
                     </th >
                    
                 </tr>
+                    </tbody >
+                    <tbody id="foto" >
+                 <tr id="campos">
+                    <th >
+
+                        Pruebas saber: <?php echo $campos->res_saber ?>
+                    </th >
+                   
+                </tr>
+                <tr id="campos">
+                    <th >
+
+                        Resultado examen: <?php echo $campos->res_examen ?>
+                    </th >
+                   
+                </tr>
+                <tr id="campos">
+                    <th >
+
+                        Resultado examen: <?php echo $campos->res_entrevista ?>
+                    </th >
+                   
+                </tr>
+                <tr id="campos">
+                    <th >
+
+                        Promedio: <?php echo $campos->prom_resul ?>
+                    </th >
+                   
+                </tr>
+               </tbody >       
                             
-            </tbody >                
         </table>
     </body>
 </html>

@@ -63,12 +63,13 @@ $consulta2= mysql_query($sql);
                 <table border="1" id="res">          
                 <thead>
                     <tr align ="center">                       
-                        <th colspan="10">Lista de admitidos por programas</th>
+                        <th colspan="11">Lista de admitidos por programas</th>
                     </tr>
                     </thead>
                     <tbody>
                     
                         <tr id="tit">
+                        <td>Num</td>
                         <td>Identificación</td>
                         <td>Nombres</td>
                         <td>Apellidos</td>
@@ -85,6 +86,7 @@ $consulta2= mysql_query($sql);
                    <?php while ($campos = mysql_fetch_object($consulta)) {?>
                     <tr id="resul">
                        
+                        <td><?php echo $cont?></td>
                         <td><?php echo $campos->identificacion?></td>
                         <td><?php echo $campos->nombres;?></td>
                         <td><?php echo $campos->apellidos;?></td>
