@@ -14,7 +14,9 @@ and open the template in the editor.
      *  
      */
     ?>
-    <?php include ("../conexion.php"); ?>
+    <?php include '../conexioni.php';
+        $mysql = new conexioni();
+        $mysqli=$mysql->conctar();?>
     <body>
         <div id="section">
         <br>
@@ -55,9 +57,11 @@ and open the template in the editor.
                     <tr>
                          <td>*Colegio:</td>
                         <td> 
-                            <?php $result = mysql_query("SELECT * FROM colegio"); ?>
+                            <?php 
+                            $consulta= "SELECT * FROM colegio";
+                            $result   = $mysqli->query($consulta); ?>
                             <select name="txt_colegio" > 
-                                <?php  while ($campo = mysql_fetch_object($result)) 
+                                <?php  while ($campo = mysqli_fetch_object($result)) 
                                      {  ?>
                                         
                                         <option value="<?php echo $campo->id_colegio; ?>"><?php echo $campo->nombre ?></option>
@@ -78,13 +82,15 @@ and open the template in the editor.
                     <tr>
                         <td>Programa:</td>
                         <td> 
-                            <?php $result = mysql_query("SELECT * FROM programa"); ?>
+                            <?php
+                            $consulta= "SELECT * FROM programa";
+                            $result   = $mysqli->query($consulta);?>
                             <select name="txt_prog"> 
-                                <?php  while ($campo = mysql_fetch_object($result)) 
+                                <?php  while ($campo = mysqli_fetch_object($result)) 
                                      {  ?>
                                         
                                         <option value="<?php echo $campo->idprograma; ?>"><?php echo $campo->nombre; ?></option>
-                                    <?php } ?>
+                                    <?php }   ?>
                                      {
                          
                         

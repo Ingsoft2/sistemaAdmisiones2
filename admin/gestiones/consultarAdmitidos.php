@@ -3,12 +3,12 @@ include '../conexion.php';
 $id=$_GET['id'];
 if($id==0)
 {
-$sql =("select aspirante.identificacion as 'identificacion', aspirante.nombres as 'nombres', aspirante.apellidos as 'apellidos', aspirante.fecha_nacimiento as 'fecha_nacimiento', aspirante.lugar_nacimiento as 'lugar_nacimiento', aspirante.genero as 'genero', colegio.nombre as 'nomCol', aspirante.promedio as 'promedio', aspirante.id_colegio as 'id_colegio', programa.nombre as 'nomProg'  from aspirante, colegio, programa where aspirante.id_colegio = colegio.id_colegio and programa.idprograma= aspirante.idprograma");
+$sql =("select aspirante.identificacion as 'identificacion', aspirante.nombres as 'nombres', aspirante.apellidos as 'apellidos', aspirante.fecha_nacimiento as 'fecha_nacimiento', aspirante.lugar_nacimiento as 'lugar_nacimiento', aspirante.genero as 'genero', colegio.nombre as 'nomCol', aspirante.promedio as 'promedio', aspirante.id_colegio as 'id_colegio', programa.nombre as 'nomProg'  from aspirante, colegio, programa where aspirante.id_colegio = colegio.id_colegio and programa.idprograma= aspirante.idprograma order by prom_resul desc");
 $consulta=  mysql_query($sql);
 }
  else 
 {
-$sql =("select aspirante.identificacion as 'identificacion', aspirante.nombres as 'nombres', aspirante.apellidos as 'apellidos', aspirante.fecha_nacimiento as 'fecha_nacimiento', aspirante.lugar_nacimiento as 'lugar_nacimiento', aspirante.genero as 'genero', colegio.nombre as 'nomCol', aspirante.promedio as 'promedio', aspirante.id_colegio as 'id_colegio', programa.nombre as 'nomProg'  from aspirante, colegio, programa where aspirante.id_colegio = colegio.id_colegio and programa.idprograma= aspirante.idprograma and aspirante.idprograma=$id ");
+$sql =("select aspirante.identificacion as 'identificacion', aspirante.nombres as 'nombres', aspirante.apellidos as 'apellidos', aspirante.fecha_nacimiento as 'fecha_nacimiento', aspirante.lugar_nacimiento as 'lugar_nacimiento', aspirante.genero as 'genero', colegio.nombre as 'nomCol', aspirante.promedio as 'promedio', aspirante.id_colegio as 'id_colegio', programa.nombre as 'nomProg', aspirante.prom_resul as 'resultados'  from aspirante, colegio, programa where aspirante.id_colegio = colegio.id_colegio and programa.idprograma= aspirante.idprograma and aspirante.idprograma=$id order by prom_resul desc ");
 $consulta=  mysql_query($sql);    
 }
 $sql= ("select programa.TotalAspirantes as 'total' from programa where idprograma=$id");
@@ -63,7 +63,7 @@ $consulta2= mysql_query($sql);
                 <table border="1" id="res">          
                 <thead>
                     <tr align ="center">                       
-                        <th colspan="9">Lista de admitidos por programas</th>
+                        <th colspan="10">Lista de admitidos por programas</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -77,6 +77,7 @@ $consulta2= mysql_query($sql);
                         <td>Género</td>
                         <td>Colegio</td>
                         <td>Programa</td>
+                        <td>Promedio Resultados</td>
                         <td>Estado</td>
                     </tr>
                     
@@ -92,12 +93,14 @@ $consulta2= mysql_query($sql);
                         <td><?php echo $campos->genero;?></td>
                         <td><?php echo $campos->nomCol;?></td>
                         <td><?php echo $campos->nomProg;?></td>
-                        <?php if($cont<$total)
+                        <td><?php echo $campos-> resultados;?></td>
+                                               
+                        <?php if($cont<=$total)
                         {?>
-                        <td>Admitido</td>
-                        <?php } else if($cont<$total){ ?>
-                         <td>No admitido</td>
-                        <?php } ?>
+                        <td id="ad">Admitido</td>
+                        <?php } else if($cont>$total){ ?>
+                        <td id="noad">No admitido</td>
+                        <?php } $cont++; ?>
                     </tr>
                     <?php } ?>
                     <?php } ?>

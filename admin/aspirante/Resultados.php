@@ -19,8 +19,12 @@ if(isset($_POST['op']))
                      {
                         
      
-                         $query = "update resultados set res_saber=$saber, res_examen=$examen,res_entrevista=$entrevista where identificacion = $id";     
+                         $query = "update resultados set res_saber=$saber, res_examen=$examen,res_entrevista=$entrevista where identificacion = $id";    
+                         $prom=($saber+$examen+$entrevista)/3;
+                         $prm2=round($prom,2);
+                         $query2="update aspirante set prom_resul=$prm2 where identificacion = $id";
                              //Ejecutamos la consutla
+                             mysql_query($query2) or die ('Error al procesar consulta: '.mysql_error());
                             mysql_query($query) or die('Error al procesar consulta: ' . mysql_error()); 
                             echo "<script>  alert('Resultados agregados');window.opener.location.reload() ;window.close();</script>";
                      }

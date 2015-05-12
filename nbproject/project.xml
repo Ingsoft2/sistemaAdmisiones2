@@ -6,10 +6,19 @@
             <name>SistemaAdmisiones</name>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>Apellidos</word>
+            <word>Colegio</word>
+            <word>Fecha</word>
+            <word>Genero</word>
             <word>interna</word>
             <word>interno</word>
+            <word>Lugar</word>
+            <word>nacimiento</word>
+            <word>Nombres</word>
             <word>Programa</word>
+            <word>Promedio</word>
             <word>Prubeas</word>
+            <word>Resultados</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

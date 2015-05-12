@@ -1,9 +1,13 @@
 <?php
 $id=$_GET['id'];
 include ("../conexion.php");
-$sql ="select * from aspirante where identificacion = $id";
-$consulta=  mysql_query($sql);
-$campos=  mysql_fetch_object($consulta);
+
+include '../conexioni.php';
+        $mysql = new conexioni();
+        $mysqli=$mysql->conctar();
+        $consulta= "select * from aspirante where identificacion = $id";
+        $result   = $mysqli->query($consulta);
+        $campos = mysqli_fetch_object($result);
 
 $sql1 ="select * from resultados where identificacion = $id";
 $consulta1=  mysql_query($sql1);
@@ -45,38 +49,39 @@ and open the template in the editor.
                 </tr>
                 <tr id="campos">
                     <th >
-                        Nombre: <?php echo $campos->nombres ?>
+                        Nombres: <?php echo $campos->nombres ?>
                     </th >
                 </tr>
                 <tr id="campos">
                     <th >
-                        Nombre: <?php echo $campos->apellidos ?>
+                        Apellidos: <?php echo $campos->apellidos ?>
                     </th >
                 </tr>
                 <tr id="campos">
                     <th >
-                        Nombre: <?php echo $campos->fecha_nacimiento ?>
+                        Fecha nacimiento: <?php echo $campos->fecha_nacimiento ?>
                     </th >
                 </tr>
                 <tr id="campos">
                     <th >
-                        Nombre: <?php echo $campos->lugar_nacimiento ?>
+                        Lugar de nacimiento: <?php echo $campos->lugar_nacimiento ?>
                     </th >
                 </tr>
                 <tr id="campos">
                     <th >
-                        Nombre: <?php echo $campos->genero ?>
+                        Genero: <?php echo $campos->genero ?>
                     </th >
                 </tr>
                 <tr id="campos">
                     <th >
-                        Nombre: <?php echo $campos->id_colegio ?>
+                        Colegio: <?php echo $campos->id_colegio ?>
                     </th >
                 </tr>
                 <tr id="campos">
                     <th >
-                        Nombre: <?php echo $campos->promedio ?>
+                        Promedio Colegio: <?php echo $campos->promedio ?>
                     </th >
+                   
                 </tr>
                             
             </tbody >                

@@ -53,22 +53,27 @@ class Colegio {
      * estado
      * ciudad
      */
-    public function lista_colegios($tabla) {
+    public function lista_colegios()
+            {
         
-        include '../conexion.php';
-        $result = mysql_query("SELECT * FROM colegio");
+        include '../conexioni.php';
+        $mysql = new conexioni();
+        $mysqli=$mysql->conctar();
+        $consulta= "SELECT * FROM colegio";
+        $result   = $mysqli->query($consulta);
         echo "<table border = '3' id=res > \n";
         echo "<tr align =center> <th colspan=5>Lista de colegios</th> </tr>";
         echo "<tr id=tit><td >&nbsp;ID_COLEGIO&nbsp;</td><td>&nbsp;NOMBRE&nbsp;</td><td>&nbsp;CIUDAD&nbsp;</td><td>&nbsp;ESTADO&nbsp;</td><td>&nbsp;OPCIONES&nbsp;</td></tr> \n";
-        while ($campo=mysql_fetch_object($result)) 
+        while ($campo=mysqli_fetch_object($result)) 
                 {
             echo "<tr id=resul><td>$campo->id_colegio</td><td>$campo->nombre</td><td>$campo->ciudad</td><td>$campo->estado</td>". "<td><a href=../colegio/procesar_colegio.php?req_col=eliminar&id=".$campo->id_colegio.";><img src=../../img/Colegio/elmn.png width=25px heigt=25px /></a>" 
-                    . "&nbsp;&nbsp;&nbsp;  <a href=../colegio/modificarColegio.php?req_col=modificar&id=$campo->id_colegio;&nombre=".$campo->nombre."&estado=$campo->estado&ciudad=$campo->ciudad> <img src=../../img/Colegio/mdf.png width=25px heigt=25px /></a></td> "  . "</tr> \n";
+                    . "&nbsp;&nbsp;&nbsp;  <a href=../colegio/modificarColegio.php?req_col=modificar&id=$campo->id_colegio> <img src=../../img/Colegio/mdf.png width=25px heigt=25px /></a></td> "  . "</tr> \n";
            // echo "<td><a href=editar_estudiante.php?id=".$row[$campos[0]].">Editar</a></td>";
             
             
         }
         echo "</table> \n";
+         $mysqli->close();
     }
     
     /**

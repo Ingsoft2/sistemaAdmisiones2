@@ -49,8 +49,13 @@ and open the template in the editor.
                     <tr>
                         <td>Codigo Facultad</td>
                         <td> 
-                            <?php $result = mysql_query("SELECT * FROM facultad"); ?>
-                            <select name="txt_idf"> <?php  while ($row = mysql_fetch_row($result)) 
+                            <?php
+                            include '../conexioni.php';
+                             $mysql = new conexioni();
+                             $mysqli=$mysql->conctar();
+                             $consulta= "SELECT * FROM facultad";
+                            $result   = $mysqli->query($consulta);?>
+                            <select name="txt_idf"> <?php  while ($row = mysqli_fetch_row($result)) 
                                      {  ?>
                                         
                                         <option value="<?php echo $row[0]; ?>"><?php echo $row[1] ?></option>

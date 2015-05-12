@@ -68,7 +68,7 @@ class Aspirante {
         $mensaje = "resultados: ";
 //Insertar aspirante en la BD
         echo $nom_imagen;
-        $sql = @mysql_query("INSERT INTO aspirante(identificacion, nombres, apellidos, fecha_nacimiento, lugar_nacimiento, genero, id_colegio, promedio, nom_imagen,idprograma)VALUES('$pIdentificacion','$pNombre','$pApellido','$pFecha_nacimiento','$pLugar_nacimiento','$pGenero', '$pColegio', '$pPromedio','$nom_imagen','$prog')");
+        $sql = @mysql_query("INSERT INTO aspirante(identificacion, nombres, apellidos, fecha_nacimiento, lugar_nacimiento, genero, id_colegio, promedio, nom_imagen,idprograma,prom_resul)VALUES('$pIdentificacion','$pNombre','$pApellido','$pFecha_nacimiento','$pLugar_nacimiento','$pGenero', '$pColegio', '$pPromedio','$nom_imagen','$prog',0)");
         $sql2 = @mysql_query("insert into resultados (res_saber,identificacion) value ($Psaber,$pIdentificacion) ");
         if (!$sql) {
             $mensaje.="Error Insertando Aspirante en la base de datos: " . mysql_error();
@@ -95,13 +95,16 @@ class Aspirante {
      */
     public function lista_aspirante($tabla) {
         
-        include '../conexion.php';
-        $result = mysql_query("select aspirante.identificacion as 'identificacion', aspirante.nombres as 'nombres', aspirante.apellidos as 'apellidos', aspirante.fecha_nacimiento as 'fecha_nacimiento', aspirante.lugar_nacimiento as 'lugar_nacimiento', aspirante.genero as 'genero', colegio.nombre as 'nomCol', aspirante.promedio as 'promedio', aspirante.id_colegio as 'id_colegio', programa.nombre as 'nomProg'  from aspirante, colegio, programa where aspirante.id_colegio = colegio.id_colegio and programa.idprograma= aspirante.idprograma");
+        include '../conexioni.php';
+        $mysql = new conexioni();
+        $mysqli=$mysql->conctar();
+        $consulta= "select aspirante.identificacion as 'identificacion', aspirante.nombres as 'nombres', aspirante.apellidos as 'apellidos', aspirante.fecha_nacimiento as 'fecha_nacimiento', aspirante.lugar_nacimiento as 'lugar_nacimiento', aspirante.genero as 'genero', colegio.nombre as 'nomCol', aspirante.promedio as 'promedio', aspirante.id_colegio as 'id_colegio', programa.nombre as 'nomProg'  from aspirante, colegio, programa where aspirante.id_colegio = colegio.id_colegio and programa.idprograma= aspirante.idprograma";
+        $result   = $mysqli->query($consulta);
         echo "<table border = '3'> \n";
         echo "<tr><td>IDENTIFICACION</td><td>NOMBRES</td><td>APELLIDOS</td><td>FECHA NACIMIENTO</td><td>LUGAR NACIMIENTO</td><td>GENERO</td><td>COLEGIO</td><td>PROMEDIO</td><td>PROGRAMA</td><td>OPCIONES</td></tr> \n";
-        while ($campos = mysql_fetch_object($result)) {
+        while ($campos = mysqli_fetch_object($result)) {
             echo "<tr><td>$campos->identificacion</td><td>$campos->nombres</td><td>$campos->apellidos</td><td>$campos->fecha_nacimiento</td><td>$campos->lugar_nacimiento</td><td>$campos->genero</td><td>$campos->nomCol</td><td>$campos->promedio</td><td>$campos->nomProg</td> <td><a href=../aspirante/procesar_aspirante.php?req_asp=eliminar&id=".$campos->identificacion.">Borrar</a>&nbsp;&nbsp;&nbsp;<a href=../aspirante/modificarAspirante.php?req_asp=modificar&id=".$campos->identificacion."> Modificar</a>&nbsp;&nbsp;&nbsp;<a <a href='../aspirante/Resultados.php?id=".$campos->identificacion."' target='Resultados' onclick=\"window.open(this.href, this.target, 'width=600, height=400, menubar=no, resizable=NO');return false;\"><img src=../../img/aspirante/resultadosAspirante.png width=25px heigt=25px/></a>&nbsp;&nbsp;&nbsp;"
-                    . "<a href='../aspirante/MostrarAspirante.php?id=".$campos->identificacion."' target='MostrarAspirante' onclick=\"window.open(this.href, this.target, 'width=600, height=400, menubar=no, resizable=NO');return false;\"><img src=../../img/aspirante/mostratAspirante.png width=25px heigt=25px /></a></td></tr> \n";
+                    . "<a href='../aspirante/MostrarAspirante.php?id=".$campos->identificacion."' target='MostrarAspirante' onclick=\"window.open(this.href, this.target, 'width=600, height=800, menubar=no, resizable=NO');return false;\"><img src=../../img/aspirante/mostratAspirante.png width=25px heigt=25px /></a></td></tr> \n";
            // echo "<td><a href=editar_estudiante.php?id=".$row[$campos[0]].">Editar</a></td>";
        
         }

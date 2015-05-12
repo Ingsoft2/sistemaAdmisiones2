@@ -1,3 +1,12 @@
+<?php
+        include '../conexioni.php';
+        $id=$_GET['id'];
+        $mysql = new conexioni();
+        $mysqli=$mysql->conctar();
+        $consulta= "SELECT * FROM colegio where id_colegio = $id";
+        $result=$mysqli->query($consulta);
+        $campo=mysqli_fetch_object($result)
+?>
 <!-- from que se contiene el formulario pa editar los colegios de la base de datos -->
 <html>
     <head>
@@ -23,12 +32,12 @@
                     </tr>
                     <tr>
                         <td>Nombres:</td>
-                        <td><input type="text" name="txt_nombre" value="<?php echo $_REQUEST['nombre'];?>" required=""/></td>
+                        <td><input type="text" name="txt_nombre" value="<?php echo $campo->nombre ?>" required=""/></td>
                     </tr>
                     <tr colspan="3">
                         <td>Estado:</td>
                         
-                        <td> <input type="text"  value="<?php echo $_REQUEST['estado'];?>" readonly=""/>
+                        <td> <input type="text"  value="<?php echo $campo->estado ?>" readonly=""/>
                             <select name="txt_estado" required >
                     
                     <option  >Privado</option>
@@ -38,7 +47,7 @@
                     </tr>
                     <tr>
                         <td>Ciudad:</td>
-                        <td><input type="text" name="txt_ciudad" value="<?php echo $_REQUEST['ciudad'];?>" required=""/></td>
+                        <td><input type="text" name="txt_ciudad" value="<?php echo $campo->ciudad  ?>" required=""/></td>
                     </tr>
                     
                     
@@ -57,6 +66,6 @@
         </form>
     </body>
     <?php
-include("fooder.php");?> <!-- inclucion del footer en la pafina -->
+include("fooder.php"); $mysqli->close();;?> <!-- inclucion del footer en la pafina -->
 
 </html>

@@ -45,19 +45,24 @@ class Facultad {
      * lista la tabla de facultades para ser visualizada en la gestion
      * @param type $tabla
      */
-    public function lista_facultad($tabla) {
+    public function lista_facultad($tabla) 
+            {
         
-        include '../conexion.php';
-        $result = mysql_query("SELECT * FROM facultad");
+        include '../conexioni.php';
+        $mysql = new conexioni();
+        $mysqli=$mysql->conctar();
+        $consulta= "SELECT * FROM facultad";
+        $result   = $mysqli->query($consulta);
         echo "<table border = '3'> \n";
         echo "<tr><td>IDENTIFICACION</td><td>NOMBRE</td><td>FECHA CREACION</td><td>OPCIONES</td></tr> \n";
-        while ($campos = mysql_fetch_object($result)) 
+        while ($campos = mysqli_fetch_object($result)) 
                 {
             echo "<tr><td>$campos->id_facultad</td><td>$campos->nombre</td><td>$campos->fechaCreacion</td>". "<td><a href=../facultad/procesar_facultad.php?req_fac=eliminar&id=".$campos->id_facultad.">Borrar</a><a href=../facultad/modificarFacultad.php?req_fac=modificar&id=".$campos->id_facultad.
                     "&nombre=".$campos->nombre."". "&fechaCreacion=".$campos->fechaCreacion."> Modificar</a></td></tr> \n";
         
         }
         echo "</table> \n";
+        $mysqli->close();
     }
     
     
