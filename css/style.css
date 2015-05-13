@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : MiPc
 */
 #header{
-    width: 960px;
+    width: 980px;
     height: 155px;
     background-color: #4F5B65;//#A5CD4E; //#638cb5;
     margin: 0 auto 0;
@@ -38,7 +38,7 @@ h1{
  
  #nav{
     background-color: #99cc33;
-    width: 960px;
+    width: 980px;
     height: 35px;
     margin: 0 auto 0;
     padding: 1px;
@@ -62,7 +62,7 @@ h1{
     #nav a{
         display: block;
         font-family: Hervetica;
-        font-size:14px;
+        font-size:17px;
         color: #fff;
         text-decoration: none;
         position: relative;
@@ -80,7 +80,7 @@ h1{
     }
     
     #footer{
-        width: 960px;
+        width: 980px;
         height: 90px;
         margin: 0 auto;
         font-size: 12px;
@@ -120,7 +120,7 @@ th {
     display: block;
         font-family: Hervetica;
         font-size:14px;
-        color: blue;
+        color: black;
         text-decoration: none;
         position: relative;    
 }

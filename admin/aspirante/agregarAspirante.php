@@ -52,7 +52,7 @@ and open the template in the editor.
                     </tr>
                     <tr>
                         <td>Género:</td>
-                        <td>Masculino<input  type="radio" name="genero" value="Masculino"/>Femenino<input type="radio" name="genero" value="Femenino"></td>
+                        <td>Masculino<input  type="radio" name="genero" value="Masculino" checked=""/>Femenino<input type="radio" name="genero" value="Femenino"></td>
                     </tr>
                     <tr>
                          <td>*Colegio:</td>

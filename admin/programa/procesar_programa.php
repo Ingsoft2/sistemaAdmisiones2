@@ -26,7 +26,7 @@ switch ($_REQUEST['req_prog'])
             }
             else
             {
-             echo '<script> alert("La fecha deve ser menor a la fecha actual"); location.href="../programa/agregarPrograma.php";</script>';   
+             echo '<script> alert("La fecha debe ser menor a la fecha actual"); location.href="../programa/agregarPrograma.php";</script>';   
             }
         }
         else
