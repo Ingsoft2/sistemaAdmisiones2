@@ -13,10 +13,29 @@ switch ($_REQUEST['req_prog'])
         $acreditacion = $_POST['acreditacion'];
         $numAdmitidos = $_POST['txt_numAd'];
         $idFacultad = $_POST['txt_idf'];
-                
-        $mensaje = Programa::insetarPrograma($nombre, $fechaAsignacion, $acreditacion, $numAdmitidos, $idFacultad);
+        $date1 = strtotime(date("d-m-Y H",time()));
+        $patron_texto="abcdefghijklmnopqrstuvwxyzABSEFGHIJKLMNOPQRSTUVWXYZ";
         
-        header('Location:../gestiones/gestionarPrograma.php'); 
+        
+        if(strlen($nombre)>3 && strlen($nombre)<20)
+        {
+            if($fechaAsignacion<$date1)
+            {
+          $mensaje = Programa::insetarPrograma($nombre, $fechaAsignacion, $acreditacion, $numAdmitidos, $idFacultad);
+           header('Location:../gestiones/gestionarPrograma.php'); 
+            }
+            else
+            {
+             echo '<script> alert("La fecha deve ser menor a la fecha actual"); location.href="../programa/agregarPrograma.php";</script>';   
+            }
+        }
+        else
+          {
+             echo '<script> alert("Nombre demaciado corto o demaciado largo"); location.href="../programa/agregarPrograma.php";</script>';
+          }       
+       
+        
+       
         
         exit();
       

@@ -44,7 +44,7 @@ and open the template in the editor.
                     </tr>
                     <tr>
                         <td>Numero Admitidos</td>
-                        <td><input type="text" name="txt_numAd" value="" required=""/></td>
+                        <td><input type="number" name="txt_numAd" value="" required=""/></td>
                     </tr>
                     <tr>
                         <td>Codigo Facultad</td>

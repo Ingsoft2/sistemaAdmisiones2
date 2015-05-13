@@ -52,7 +52,7 @@ and open the template in the editor.
                     </tr>
                     <tr>
                         <td>Numero Admitidos</td>
-                        <td><input type="text" name="txt_numAd" value="<?php echo $_REQUEST['numAdmitidos'];?>" required=""/></td>
+                        <td><input type="number" name="txt_numAd" value="<?php echo $_REQUEST['numAdmitidos'];?>" required=""/></td>
                     </tr>
                     <tr>
                         <td>Facultad</td>
