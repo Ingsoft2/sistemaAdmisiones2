@@ -12,6 +12,10 @@ if(isset($_POST['id']))
  //Verificamos que el id es un numero mayor a 0
  if($id > 0 )
  {
+      if(strlen($nombre)>3 && strlen($nombre)<20)
+         {      
+             if(strlen($ciudad)>3 && strlen($ciudad)<20)
+             {
      include_once '../conexion.php';
      $nombre=$_POST['txt_nombre'];
      $estado=$_POST['txt_estado'];
@@ -24,6 +28,14 @@ if(isset($_POST['id']))
         mysql_query($query) or die('Error al procesar consulta: ' . mysql_error());
         echo 'colegio modificado';
         header('Location:../gestiones/gestionarColegio.php');
+         }
+         else {echo '<script> alert("el nombre de la ciudad debe se completo mayor a 3 letras y menor a 20"); location.href="../gestiones/gestionarColegio.php";</script>';  }
+             }
+             else
+         {
+              echo '<script> alert("el nombre del colegio debe se completo mayor a 3 letras y menor a 20"); location.href="../gestiones/gestionarColegio.php";</script>';   
+         }
+         
      
  }
      
