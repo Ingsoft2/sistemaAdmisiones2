@@ -10,10 +10,20 @@ switch ($_REQUEST['req_col'])
         $nombre = $_POST['txt_nombres'];
         $estado = $_POST['estado'];
         $ciudad = $_POST['txt_ciudad'];
-          if(is_string($ciudad))
-              
+        
+         if(strlen($nombre)>3 && strlen($nombre)<20)
+         {      
+             if(strlen($ciudad)>3 && strlen($ciudad)<20)
+             {
         $mensaje = Colegio::insertarColegio($nombre, $estado, $ciudad);
-     header('Location:../gestiones/gestionarColegio.php'); 
+     header('Location:../gestiones/gestionarColegio.php');
+             }
+            else {echo '<script> alert("el nombre de la ciudad debe se completo mayor a 3 letras y menor a 20"); location.href="../colegio/agregarColegio.php";</script>';  }
+         }
+         else
+         {
+              echo '<script> alert("el nombre del colegio debe se completo mayor a 3 letras y menor a 20"); location.href="../colegio/agregarColegio.php";</script>';   
+         }
       exit();
       
       case "eliminar":
