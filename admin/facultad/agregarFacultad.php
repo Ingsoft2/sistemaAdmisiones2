@@ -7,6 +7,7 @@
     </head>
     <?php include ("Header.php"); ?>
     <body>
+        <div id="section">
             <br>      
             <form action="procesar_facultad.php" method="post"> 
         <table border="1">

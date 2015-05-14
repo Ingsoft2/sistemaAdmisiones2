@@ -17,8 +17,8 @@ and open the template in the editor.
         <div id="section"> <!--  div de la seccion  -->
             <div id="info">  <!--  div de las ooopciones a realizar -->
                  
-                <a href="../colegio/agregarColegio.php"><img src="../../img/aspirante/agregarAspirante.png" width="100" height="90">Agregar colegio</a>
-                <a href="../aspirante/buscarAspirante.php"><img src="../../img/aspirante/buscarAspirante.png" width="100" height="90">Buscar Aspirante</a> 
+                <a href="../colegio/agregarColegio.php"><img src="../../img/Colegio/colegioAgregar.png" width="100" height="90">Agregar colegio</a>
+                <a href="../aspirante/buscarAspirante.php"><img src="../../img/Colegio/buscarCoegio.png" width="100" height="90">Buscar Aspirante</a> 
             <br> 
             <br> 
             <!--  inclusion de la lista de colegios y conexion a la base de datos -->

@@ -1,0 +1,195 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14/05/2015, 03:54:44 PM
+    Author     : MiPc
+*/
+#content {
+		float: left;
+		width: 572px;
+	}
+	
+	/* Sidebar */
+	aside{
+		float: left;
+		width: 302px;
+		margin-right:52px;
+	}
+			
+	
+
+
+/* Left & Right alignment */
+
+
+
+
+
+.wrapper { 
+	width:100%;
+	overflow:hidden;
+}
+
+/* The inside class provides consistent padding. To be used often! */
+.inside{ padding: 32px 37px 50px 37px; }
+
+
+/*----- form defaults -----*/
+
+
+/*----- other -----*/
+figure { margin-bottom:18px;}
+
+.img-indent { 
+	margin:0 20px 0 0; 
+	float:left;
+}
+
+
+.extra-wrap { 
+	overflow:hidden;
+}
+
+p {margin-bottom:18px;}
+.p1 { margin-bottom:9px;}
+.p2 { margin-bottom:18px;}
+.p3 { margin-bottom:27px;
+}
+
+
+/*----- txt, links, lines, titles -----*/
+a {
+	
+	outline:none;
+}
+a:hover{
+	text-decoration:none;
+}
+
+
+	
+
+
+
+
+/*==================boxes====================*/
+.main-box {
+	border-top:5px solid #eaeaea;
+	background:#fff;
+	width:100%;
+}
+
+
+.contacts {
+	padding-bottom:20px;
+}
+	.contacts li {
+		width:100%;
+		overflow:hidden;
+	}
+		.contacts li strong {
+			float:left;
+			width:95px;
+		}
+
+
+.list1 {
+	margin-left:12px;
+	padding-bottom:18px;
+}
+.list1 li {
+	background:url(../images/arrow1.gif) no-repeat 0 6px;
+	padding:0 0 0 12px;
+}
+
+
+/*===== gallery =====*/
+.roundabout-holder  { 
+	width:500px;
+	height:496px;
+	margin:0 auto;
+}
+.roundabout-moveable-item {
+   width: 646px;
+   height: 416px;
+   cursor: pointer;
+	 border:3px solid #ccc;
+	 border:3px solid rgba(0, 0, 0, 0.08);
+   border-radius:4px;
+	 -moz-border-radius:4px;
+	 -webkit-border-radius:4px;
+}
+	.roundabout-moveable-item img{
+		width:100%;
+	}
+.roundabout-in-focus {
+	border:3px solid rgba(0, 0, 0, 0.2);
+}
+
+/*--- news list styles ---*/
+	.news li {
+		overflow:hidden;
+		position:relative;
+		padding:0 0 26px 84px;
+	}
+	.news li:last-child {
+		padding-bottom:0;
+	}
+	
+		.news li figure {
+			width:59px;
+			height:59px;
+			background:url(../images/date-bg1.gif) no-repeat 0 0;
+			position:absolute;
+			left:0;
+			top:0;
+			text-align:center;
+			border:3px solid #ebebeb;
+			border-radius:4px;
+			-moz-border-radius:4px;
+			-webkit-border-radius:4px;
+			
+			color:#fff;
+			text-transform:uppercase;
+		}
+			.news li figure strong {
+				display:block;
+				
+				line-height:1.2em;
+				margin-bottom:-7px;
+				padding-top:4px;
+			}
+		
+		.news li:nth-of-type(4n+2) figure {
+			background:url(../images/date-bg2.gif) no-repeat 0 0;
+		}
+		.news li:nth-of-type(4n+3) figure {
+			background:url(../images/date-bg3.gif) no-repeat 0 0;
+		}
+		.news li:nth-of-type(4n+4) figure {
+			background:url(../images/date-bg4.gif) no-repeat 0 0;
+		}
+
+
+
+
+.team-list li {
+	width:100%;
+	overflow:hidden;
+	padding-bottom:43px;
+}
+.team-list li:last-child {
+	padding-bottom:0;
+}
+	.team-list li figure {
+		float:left;
+		margin:0 20px 0 0;
+		padding:0;
+	}
+
+
+
+

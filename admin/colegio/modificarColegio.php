@@ -16,6 +16,7 @@
     </head>
     <?php include ("Header.php"); ?> <!-- inclucion del header en la base de datos -->
     <body>
+        <div id="section">
         <br>
         <form name="formu" id="formu" method="POST"  action="editar.php">
             <table border="1"> <!-- tabla que recibe los dats para modificarlos -->

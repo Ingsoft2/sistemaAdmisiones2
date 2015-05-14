@@ -13,12 +13,13 @@
                 <div id="nav">
                     <ul>
                         <!-- nav de opciones de la pagina -->
+                        <li><a href="../index.php"><img src="../../img/casa.png" width="25" height="25"></a></li>
                         <li><a href="../gestiones/gestionarFacultad.php">Gestionar facultad</a></li>
                         <li> <a href="../gestiones/gestionarPrograma.php">Gestionar programa</a></li>
                         <li> <a href="../gestiones/gestionarColegio.php">Gestionar colegio</a></li>
                         <li> <a href="../gestiones/gestionAraspirante.php">Gestionar aspirante</a></li>
                         <li> <a href="../gestiones/consultarAdmitidos.php?id=0">Consultar admitidos</a></li>
-                        <li> <a href="#">Ingresar aspirante</a></li>
+                        <li> <a href="../aspirante/agregarAspirante.php">Ingresar aspirante</a></li>
                           
                          
                     </ul>
