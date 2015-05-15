@@ -4,7 +4,7 @@
                <!-- headere de el index -->
                 <div id="logo">
                     <a href="../admin/index.php">
-                         <img src="../img/logo.png" width="450" height="140">
+                        <img src="../img/logo.png" width="450" height="140">
                          
                     </a>
                 </div>

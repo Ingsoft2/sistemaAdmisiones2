@@ -76,7 +76,8 @@ class Programa {
         $consulta= "select programa.idprograma, programa.nombre, programa.fechaRegistro, programa.estadoAcreditacion, programa.TotalAspirantes, facultad.nombre as 'nomfacu', programa.facultad_idfacultad from programa, facultad where programa.facultad_idfacultad = facultad.id_facultad  ";
         $result   = $mysqli->query($consulta);
             echo "<table border = '3' id=res > \n";
-            echo "<tr id=tit><td >&nbsp;ID_PROGRAMA&nbsp;</td><td>&nbsp;NOMBRE&nbsp;</td><td>&nbsp;FECHA REGISTRO&nbsp;</td><td>&nbsp;ACREDITACION&nbsp;</td><td>&nbsp;NUMERO ADMITIDOS&nbsp;</td><td>&nbsp;FACULTAD&nbsp;</td><td>&nbsp;OPCIONES&nbsp;</td></tr> \n";
+            echo "<tr align =center> <th colspan=7>Lista de programas</th> </tr>";
+            echo "<tr align=center id=tit><td >&nbsp;ID_PROGRAMA&nbsp;</td><td>&nbsp;NOMBRE&nbsp;</td><td>&nbsp;FECHA REGISTRO&nbsp;</td><td>&nbsp;ACREDITACION&nbsp;</td><td>&nbsp;NUMERO ADMITIDOS&nbsp;</td><td>&nbsp;FACULTAD&nbsp;</td><td>&nbsp;OPCIONES&nbsp;</td></tr> \n";
             while ($campos = mysqli_fetch_object($result)) 
                 {
                 echo "<tr id=resul><td>$campos->idprograma</td><td>$campos->nombre</td><td>$campos->fechaRegistro</td><td>$campos->estadoAcreditacion</td><td>$campos->TotalAspirantes</td><td>$campos->nomfacu</td>". "<td><a href=../programa/procesar_programa.php?req_prog=eliminar&id=".$campos->idprograma."><img src=../../img/Colegio/elmn.png width=25px heigt=25px /></a>" 

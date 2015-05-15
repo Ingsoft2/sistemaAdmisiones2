@@ -86,21 +86,32 @@ $consulta2= mysql_query($sql);
                    <?php while ($campos = mysql_fetch_object($consulta)) {?>
                     <tr id="resul">
                        
-                        <td><?php echo $cont?></td>
-                        <td><?php echo $campos->identificacion?></td>
-                        <td><?php echo $campos->nombres;?></td>
-                        <td><?php echo $campos->apellidos;?></td>
-                        <td><?php echo $campos->fecha_nacimiento;?></td>
-                        <td><?php echo $campos->lugar_nacimiento;?></td>
-                        <td><?php echo $campos->genero;?></td>
-                        <td><?php echo $campos->nomCol;?></td>
-                        <td><?php echo $campos->nomProg;?></td>
-                        <td><?php echo $campos-> resultados;?></td>
+                       
                                                
                         <?php if($cont<=$total)
                         {?>
+                        <td id="ad"><?php echo $cont?></td>
+                        <td id="ad"><?php echo $campos->identificacion?></td>
+                        <td id="ad"><?php echo $campos->nombres;?></td>
+                        <td id="ad"><?php echo $campos->apellidos;?></td>
+                        <td id="ad"><?php echo $campos->fecha_nacimiento;?></td>
+                        <td id="ad"><?php echo $campos->lugar_nacimiento;?></td>
+                        <td id="ad"><?php echo $campos->genero;?></td>
+                        <td id="ad"><?php echo $campos->nomCol;?></td>
+                        <td id="ad"><?php echo $campos->nomProg;?></td>
+                        <td id="ad"><?php echo $campos-> resultados;?></td>
                         <td id="ad">Admitido</td>
                         <?php } else if($cont>$total){ ?>
+                         <td id="noad"><?php echo $cont?></td>
+                        <td id="noad"><?php echo $campos->identificacion?></td>
+                        <td id="noad"><?php echo $campos->nombres;?></td>
+                        <td id="noad"><?php echo $campos->apellidos;?></td>
+                        <td id="noad"><?php echo $campos->fecha_nacimiento;?></td>
+                        <td id="noad"><?php echo $campos->lugar_nacimiento;?></td>
+                        <td id="noad"><?php echo $campos->genero;?></td>
+                        <td id="noad"><?php echo $campos->nomCol;?></td>
+                        <td id="noad"><?php echo $campos->nomProg;?></td>
+                        <td id="noad"><?php echo $campos-> resultados;?></td>
                         <td id="noad">No admitido</td>
                         <?php } $cont++; ?>
                     </tr>

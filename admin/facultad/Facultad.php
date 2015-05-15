@@ -54,10 +54,11 @@ class Facultad {
         $consulta= "SELECT * FROM facultad";
         $result   = $mysqli->query($consulta);
         echo "<table border = '3'> \n";
-        echo "<tr><td>IDENTIFICACION</td><td>NOMBRE</td><td>FECHA CREACION</td><td>OPCIONES</td></tr> \n";
+        echo "<tr align =center> <th colspan=4>Lista de facultades</th> </tr>";         
+        echo "<tr align=center id=tit><td>IDENTIFICACION</td><td>NOMBRE</td><td>FECHA CREACION</td><td>OPCIONES</td></tr> \n";
         while ($campos = mysqli_fetch_object($result)) 
                 {
-            echo "<tr><td>$campos->id_facultad</td><td>$campos->nombre</td><td>$campos->fechaCreacion</td>". "<td><a href=../facultad/procesar_facultad.php?req_fac=eliminar&id=".$campos->id_facultad.";><img src=../../img/Colegio/elmn.png width=25px heigt=25px /></a>"
+            echo "<tr id=resul><td>$campos->id_facultad</td><td>$campos->nombre</td><td>$campos->fechaCreacion</td>". "<td><a href=../facultad/procesar_facultad.php?req_fac=eliminar&id=".$campos->id_facultad.";><img src=../../img/Colegio/elmn.png width=25px heigt=25px /></a>"
                      ."&nbsp;&nbsp;&nbsp;  <a href=../facultad/modificarFacultad.php?req_col=modificar&id=$campos->id_facultad;&nombre=".$campos->nombre."&fechaCreacion=$campos->fechaCreacion> <img src=../../img/Colegio/mdf.png width=25px heigt=25px /></a></td> "  . "</tr> \n";
 
         

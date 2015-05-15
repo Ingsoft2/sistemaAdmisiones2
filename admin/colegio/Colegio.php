@@ -63,7 +63,7 @@ class Colegio {
         $result   = $mysqli->query($consulta);
         echo "<table border = '3' id=res > \n";
         echo "<tr align =center> <th colspan=5>Lista de colegios</th> </tr>";
-        echo "<tr id=tit><td >&nbsp;ID_COLEGIO&nbsp;</td><td>&nbsp;NOMBRE&nbsp;</td><td>&nbsp;CIUDAD&nbsp;</td><td>&nbsp;ESTADO&nbsp;</td><td>&nbsp;OPCIONES&nbsp;</td></tr> \n";
+        echo "<tr align=center id=tit><td >&nbsp;ID_COLEGIO&nbsp;</td><td>&nbsp;NOMBRE&nbsp;</td><td>&nbsp;CIUDAD&nbsp;</td><td>&nbsp;ESTADO&nbsp;</td><td>&nbsp;OPCIONES&nbsp;</td></tr> \n";
         while ($campo=mysqli_fetch_object($result)) 
                 {
             echo "<tr id=resul><td>$campo->id_colegio</td><td>$campo->nombre</td><td>$campo->ciudad</td><td>$campo->estado</td>". "<td><a href=../colegio/procesar_colegio.php?req_col=eliminar&id=".$campo->id_colegio.";><img src=../../img/Colegio/elmn.png width=25px heigt=25px /></a>" 

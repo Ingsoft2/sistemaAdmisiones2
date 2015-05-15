@@ -16,10 +16,12 @@
 
 #ad
 {
- background:blue;   
+ background:#3DCB4B;
+ color: black;
 }
 
 #noad
 {
     background:red;
+    color: whitesmoke;
 }
