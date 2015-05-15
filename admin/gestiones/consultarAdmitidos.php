@@ -68,7 +68,7 @@ $consulta2= mysql_query($sql);
                     </thead>
                     <tbody>
                     
-                        <tr id="tit">
+                        <tr id="tit" align="center">
                         <td>Num</td>
                         <td>Identificación</td>
                         <td>Nombres</td>

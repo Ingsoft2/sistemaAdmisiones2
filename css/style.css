@@ -129,3 +129,70 @@ th {
     margin: 0 auto;
 }
 
+.wrapper
+{
+    background: #7D9C74;
+}
+.inside
+{
+    background: #7D9C74;
+}
+
+#gallery
+{
+    background:#99cc33;
+}
+
+#login
+{
+    margin-top: 100px;
+     background:#99cc33;
+     margin-bottom:80px;
+}
+#logbod
+{
+    border: solid 2px black;
+    background: graytext;
+    padding: 10px;
+}
+#inp
+{
+   float: left;
+   margin-left: 100px;
+}
+
+#logtxt
+{
+    margin-left: 30px;
+}
+#tablog
+{
+     border: solid 2px black;
+    margin: 0 auto;
+}
+#section2
+{
+     background:#99cc33;
+     width: 1000px;
+        height: auto;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#texto
+{
+    width:96%;
+    height: 10px;
+    background:#99cc33;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+#fondo
+{
+    margin-top:60px;
+    margin-bottom: 60px;
+    margin-left: 250px;
+    
+}

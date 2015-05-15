@@ -5,13 +5,19 @@ include ("../conexion.php");
 include '../conexioni.php';
         $mysql = new conexioni();
         $mysqli=$mysql->conctar();
-        $consulta= "select aspirante.*, resultados.* from aspirante, resultados where aspirante.identificacion = resultados.identificacion and aspirante.identificacion= $id";
+        $consulta= "select aspirante.nom_imagen as 'nom_imagen', aspirante.identificacion as 'identificacion', aspirante.nombres as 'nombres', aspirante.apellidos as 'apellidos', aspirante.fecha_nacimiento as 'fecha_nacimiento', aspirante.lugar_nacimiento as 'lugar_nacimiento', aspirante.genero as 'genero', colegio.nombre as 'id_colegio', aspirante.promedio as 'promedio', aspirante.prom_resul as 'prom_resul', programa.nombre as 'idprograma', resultados.res_entrevista as 'res_entrevista', resultados.res_examen as 'res_examen', resultados.res_saber as 'res_saber' from aspirante, programa, colegio, resultados where aspirante.id_colegio = colegio.id_colegio and programa.idprograma=aspirante.idprograma and aspirante.identificacion = resultados.identificacion and aspirante.identificacion= $id";
         $result   = $mysqli->query($consulta);
         $campos = mysqli_fetch_object($result);
 
         $consulta1 ="select * from resultados where identificacion = $id";
         $result1=  $mysqli->query($consulta);
         $campos1=  mysqli_fetch_object($result1);
+        
+        if(isset($_POST['op']))
+{
+  echo "<script>window.opener.location.reload() ;window.close();</script>";
+}
+
         
 ?>
 <!DOCTYPE html>
@@ -82,6 +88,12 @@ res_entrevista
                 </tr>
                 <tr id="campos">
                     <th >
+                        Programa: <?php echo $campos->idprograma ?>
+                    </th >
+                   
+                </tr>
+                <tr id="campos">
+                    <th >
                         Promedio Colegio: <?php echo $campos->promedio ?>
                     </th >
                    
@@ -116,7 +128,19 @@ res_entrevista
                     </th >
                    
                 </tr>
-               </tbody >       
+               </tbody >  
+               <tbody id="foto">
+                   <tr id="campos" >
+
+                        <th >
+               <form name="formu" id="formu" method="POST" enctype="multipart/form-data" action="" >
+                         <!-- botones de modificacion -->
+                         <input type="submit" value="Aceptar" class="boton"/>
+                         <input type="hidden" value="Modificar" name="op">
+                         </form>
+                        </th>
+                    </tr >
+               </tbody>
                             
         </table>
     </body>
